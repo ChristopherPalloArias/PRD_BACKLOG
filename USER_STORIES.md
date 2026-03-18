@@ -39,3 +39,17 @@ Como administrador
 Quiero crear un evento de obra de teatro con su información base y aforo permitido
 
 Para prepararlo para su configuración comercial y posterior publicación
+
+
+## HU-02: Configuración de tiers y precios por evento
+
+Story Points: 5
+
+### Historia de Usuario
+
+Como administrador
+
+Quiero configurar los tiers, cupos y precios de una obra de teatro
+
+Para ofrecer una estructura de venta alineada con la estrategia comercial del evento
+
