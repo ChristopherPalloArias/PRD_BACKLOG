@@ -27,6 +27,28 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 | Garantizar una experiencia de compra fluida | Flujo de compra completo en ≤ 5 minutos |
 | Brindar visibilidad de disponibilidad en tiempo real | Tasa de abandono al seleccionar entradas ≤ 10% |
 
+ ## 2. Alcance del MVP
+
+ ### 2.1 IN scope
+
+- Creación de eventos con aforo configurable por el administrador
+- Validación de que el aforo no supere el máximo permitido del venue
+- Configuración de tiers por evento: VIP, General y Early Bird
+- Definición de cupos por tier, respetando que la suma total no supere el aforo del evento
+- Definición de precios por tier por evento
+- Ventana de vigencia por tiempo para el tier Early Bird
+- Visualización de eventos disponibles para compra
+- Visualización de disponibilidad por tier en tiempo real
+- Flujo de reserva de entradas con temporizador de 10 minutos
+- Simulación de pasarela de pago con resultado exitoso o fallido
+- Liberación automática de entradas cuando el pago falla
+- Liberación automática de entradas cuando expira la reserva
+- Notificaciones inmediatas al comprador en caso de compra exitosa, pago fallido o liberación de la entrada
+- Visualización del ticket confirmado después de una compra exitosa
+
+
+
+
 
 
 
