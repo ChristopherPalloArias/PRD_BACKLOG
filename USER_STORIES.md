@@ -27,3 +27,15 @@ Una historia de usuario se considera terminada cuando cumple con:
 - Estimación en Story Points asignada y justificada
 - Historia registrada en el tablero de GitHub Projects
 - Commit atómico subido al repositorio con mensaje descriptivo
+
+## HU-01: Creación de evento de obra de teatro
+
+*Story Points: 5*
+
+### Historia de Usuario
+
+Como administrador
+
+Quiero crear un evento de obra de teatro con su información base y aforo permitido
+
+Para prepararlo para su configuración comercial y posterior publicación
