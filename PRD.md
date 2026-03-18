@@ -67,6 +67,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 ### 3.1 Reglas de negocio
 
 - El sistema maneja dos roles: **Administrador** y **Comprador**.
+- El acceso y cambio de roles se gestiona a través del contexto controlado de usuarios preexistentes, sin validación de credenciales reales ni contraseñas.
 - El administrador configura el aforo del evento y este no puede superar el máximo de la sala.
 - Cada evento puede tener hasta tres tiers: **VIP**, **General** y **Early Bird**.
 - El tier **Early Bird** está disponible solo dentro de una ventana de tiempo definida por el administrador.
