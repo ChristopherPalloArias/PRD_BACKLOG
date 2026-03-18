@@ -102,3 +102,15 @@ Como comprador
 Quiero recibir notificaciones inmediatas sobre el resultado de mi proceso de compra
 
 Para conocer oportunamente el estado de mi reserva o compra
+
+## HU-07: Visualización de ticket confirmado
+
+*Story Points: 2*
+
+### Historia de Usuario
+
+Como comprador
+
+Quiero visualizar el ticket confirmado de mi compra
+
+Para disponer de la evidencia de acceso al evento adquirido
