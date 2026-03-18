@@ -94,3 +94,11 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 ### 4.1 Riesgos de negocio
 
 | Riesgo | Probabilidad | Impacto | Mitigación |
+| --- | --- | --- | --- |
+| Pago procesado pero la compra no se refleja para el comprador |  |  |  |
+| Dos compradores adquieren la misma entrada simultáneamente |  |  |  |
+| Sobreventa por fallo en control de inventario en tiempo real |  |  |  |
+| Administrador configura aforo superior al máximo de la sala |  |  |  |
+| Early Bird no se desactiva al vencer la ventana de tiempo |  |  |  |
+| El simulador de pago rechaza intentos válidos y el comprador abandona la compra |  |  |  |
+| Baja demanda en tier VIP |  |  |  |
