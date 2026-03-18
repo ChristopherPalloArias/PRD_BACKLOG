@@ -61,6 +61,15 @@ Y la sala tiene un aforo máximo definido
 Cuando intenta registrar un evento con un aforo superior al permitido
 Entonces el sistema rechaza la creación del evento
 ```
+**CA-03. Rechazo por información obligatoria incompleta**
+ 
+```gherkin
+Escenario: Información mínima incompleta
+Dado que el administrador tiene acceso previamente habilitado al sistema
+Cuando intenta registrar un evento sin la información mínima requerida
+Entonces el sistema no crea el evento
+```
+
 
 ## HU-02: Configuración de tiers y precios por evento
 
