@@ -107,10 +107,10 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
 | Riesgo | Probabilidad | Impacto | Mitigación |
 | --- | --- | --- | --- |
-| Condiciones de carrera al comprar la última entrada simultáneamente | Alta | Alto |  |
-| Fallo de pago sin notificación al comprador | Media | Alto |  |
-| Caída del scheduler y entradas bloqueadas indefinidamente | Baja | Alto |  |
-| Latencia hace que el timer del front difiera del back | Media | Medio |  |
-| Servidor cae con timer activo y la reserva queda en el limbo | Baja | Alto |  |
-| Notificaciones duplicadas por reintentos de red | Baja | Bajo |  |
-| Inconsistencias entre estado de pago y estado de ticket | Media | Alto |  |
+| Condiciones de carrera al comprar la última entrada simultáneamente | Alta | Alto | Se aplica bloqueo optimista en base de datos para garantizar que solo una transacción pueda completarse |
+| Fallo de pago sin notificación al comprador | Media | Alto | Cada transacción queda registrada y el comprador recibe una notificación sin importar el resultado |
+| Caída del scheduler y las entradas quedan bloqueadas indefinidamente | Baja | Alto | Un job de respaldo escanea periódicamente reservas vencidas y las libera si el scheduler principal falla |
+| Latencia hace que el timer del front difiera del back | Media | Medio | El temporizador que ve el comprador es orientativo, la vigencia real siempre la determina el servidor |
+| Servidor cae con el timer activo y la reserva queda en el limbo | Baja | Alto | El estado y los timestamps de cada reserva se persisten en base de datos para poder recuperarlos al reiniciar |
+| Notificaciones duplicadas por reintentos de red | Baja | Bajo | Se acepta el riesgo con manejo básico de idempotencia para evitar envíos repetidos |
+| Inconsistencias entre estado de pago y estado de ticket | Media | Alto | El ticket solo se emite tras validar que el estado del pago y el de la compra son consistentes entre sí |
