@@ -155,7 +155,14 @@ Cuando se asigna precio $0 al tier General
 Y precio -5 al tier VIP
 Entonces el sistema rechaza ambas configuraciones
 ```
-
+**CP-F04. Rechazo por cupos que exceden el aforo**
+ 
+```gherkin
+Dado que existe un evento con aforo total de 200
+Cuando se configura VIP con 100 cupos, General con 100 cupos y Early Bird con 50 cupos
+Entonces el sistema rechaza la configuración
+Y no persiste ningún cambio
+```
 ## HU-03: Visualización de eventos y disponibilidad
 
 *Story Points: 3*
