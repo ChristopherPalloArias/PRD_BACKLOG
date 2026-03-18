@@ -95,10 +95,10 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
 | Riesgo | Probabilidad | Impacto | Mitigación |
 | --- | --- | --- | --- |
-| Pago procesado pero la compra no se refleja para el comprador |  |  |  |
-| Dos compradores adquieren la misma entrada simultáneamente |  |  |  |
-| Sobreventa por fallo en control de inventario en tiempo real |  |  |  |
-| Administrador configura aforo superior al máximo de la sala |  |  |  |
-| Early Bird no se desactiva al vencer la ventana de tiempo |  |  |  |
-| El simulador de pago rechaza intentos válidos y el comprador abandona la compra |  |  |  |
-| Baja demanda en tier VIP |  |  |  |
+| Pago procesado pero la compra no se refleja para el comprador | Media | Alto |  |
+| Dos compradores adquieren la misma entrada simultáneamente | Alta | Alto |  |
+| Sobreventa por fallo en control de inventario en tiempo real | Media | Alto |  |
+| Administrador configura aforo superior al máximo de la sala | Baja | Alto |  |
+| Early Bird no se desactiva al vencer la ventana de tiempo | Media | Alto |  |
+| El simulador de pago rechaza intentos válidos y el comprador abandona la compra | Alta | Medio |  |
+| Baja demanda en tier VIP | Media | Bajo |  |
