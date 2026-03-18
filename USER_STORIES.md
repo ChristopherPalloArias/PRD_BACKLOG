@@ -40,6 +40,18 @@ Quiero crear un evento de obra de teatro con su información base y aforo permit
 
 Para prepararlo para su configuración comercial y posterior publicación
 
+### Criterios de Aceptación (CA)
+ 
+**CA-01. Evento creado en estado borrador**
+ 
+```gherkin
+Escenario: Creación exitosa de evento
+Dado que el administrador tiene acceso previamente habilitado al sistema
+Y dispone de la información obligatoria del evento
+Cuando registra un evento con datos válidos
+Y define un aforo dentro del máximo permitido de la sala
+Entonces el sistema crea el evento en estado borrador
+```
 
 ## HU-02: Configuración de tiers y precios por evento
 
