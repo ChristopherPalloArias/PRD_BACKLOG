@@ -102,3 +102,14 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 | Early Bird no se desactiva al vencer la ventana de tiempo | Media | Alto | Un proceso automático monitorea las ventanas de tiempo y desactiva el tier cuando corresponde, sin intervención manual. |
 | El simulador de pago rechaza intentos válidos y el comprador abandona la compra | Alta | Medio | Se muestran mensajes claros del error y se permite reintentar mientras la reserva siga vigente. |
 | Baja demanda en tier VIP | Media | Bajo | Monitorear métricas y ajustar estrategias de precios o promoción si es necesario |
+
+### 4.2 Riesgos técnicos
+
+| Riesgo | Probabilidad | Impacto | Mitigación |
+| --- | --- | --- | --- |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
