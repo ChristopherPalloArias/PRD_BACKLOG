@@ -78,3 +78,15 @@ Como comprador
 Quiero reservar una entrada y completar un pago simulado dentro de un tiempo límite
 
 Para asegurar mi acceso al evento sin perder disponibilidad durante el proceso
+
+## HU-05: Liberación automática por fallo de pago o expiración
+
+*Story Points: 8*
+
+### Historia de Usuario
+
+Como sistema
+
+Quiero liberar automáticamente las entradas reservadas que no se concretan
+
+Para mantener disponibilidad real y evitar bloqueo innecesario de inventario
