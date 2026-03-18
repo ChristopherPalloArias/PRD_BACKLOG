@@ -82,14 +82,9 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
 ### 3.2 Supuestos
 
-- El sistema procesa pagos únicamente en dólares.
+- El sistema procesa pagos simulados únicamente en dólares.
 - Los eventos publicados son visibles para todos los compradores sin la necesidad de utilizar filtros.
-
-
-
-
-
-
-
-
-
+- La disponibilidad de entradas que ve el comprador corresponde al inventario real del sistema.
+- La reserva expira según el reloj del servidor, no del comprador.
+- El ticket confirmado solo se genera cuando el pago ha sido exitoso.
+- Para el alcance de este MVP, se asume un entorno controlado con usuarios previamente habilitados, por lo que el registro y el inicio de sesión no forman parte de esta versión inicial.
