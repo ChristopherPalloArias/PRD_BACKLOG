@@ -163,6 +163,24 @@ Cuando se configura VIP con 100 cupos, General con 100 cupos y Early Bird con 50
 Entonces el sistema rechaza la configuración
 Y no persiste ningún cambio
 ```
+### Casos de Prueba No Funcionales (CP-NF)
+ 
+**CP-NF01. Integridad referencial entre evento y tiers**
+ 
+```gherkin
+Dado que se configuran tres tiers para un evento
+Cuando la configuración se guarda correctamente
+Entonces cada tier queda vinculado al evento sin registros huérfanos en base de datos
+```
+ 
+**CP-NF02. Consistencia ante actualizaciones consecutivas**
+ 
+```gherkin
+Dado que el precio de un tier se actualiza dos veces consecutivas
+Cuando ambas operaciones se completan
+Entonces el sistema conserva únicamente el último valor registrado
+```
+
 ## HU-03: Visualización de eventos y disponibilidad
 
 *Story Points: 3*
