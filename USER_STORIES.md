@@ -105,7 +105,14 @@ Cuando el administrador define los tiers VIP, General y Early Bird
 Y asigna cupos y precios válidos a cada tier
 Entonces el sistema guarda la configuración comercial del evento
 ```
-
+**CA-02. Vigencia temporal del Early Bird**
+ 
+```gherkin
+Escenario: Early Bird con vigencia válida
+Dado que existe un evento en estado borrador
+Cuando el administrador define una ventana de tiempo válida para el tier Early Bird
+Entonces el sistema habilita ese tier únicamente dentro del período configurado
+```
 
 ## HU-03: Visualización de eventos y disponibilidad
 
