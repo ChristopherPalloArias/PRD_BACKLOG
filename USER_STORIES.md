@@ -70,6 +70,16 @@ Cuando intenta registrar un evento sin la información mínima requerida
 Entonces el sistema no crea el evento
 ```
 
+### Casos de Prueba Funcionales (CP-F)
+
+- **CP-F01:** Registrar un evento con nombre "Bodas de Sangre", fecha "2026-05-10", sala con aforo máximo 300 y aforo configurado en 250. **Resultado esperado:** el sistema crea el evento en estado borrador con aforo 250.
+- **CP-F02:** Registrar un evento en una sala con aforo máximo 200, intentando configurar un aforo de 201. **Resultado esperado:** el sistema rechaza la operación y no persiste el evento.
+- **CP-F03:** Registrar un evento sin fecha definida. **Resultado esperado:** el sistema no crea el evento.
+
+### Casos de Prueba No Funcionales (CP-NF)
+
+- **CP-NF01:** Intentar crear un evento con aforo inválido y verificar que no queden registros parciales en base de datos.
+- **CP-NF02:** Crear tres eventos consecutivos y verificar que cada operación queda registrada con usuario, fecha y resultado para trazabilidad administrativa.
 
 ## HU-02: Configuración de tiers y precios por evento
 
