@@ -139,7 +139,14 @@ Cuando se configura VIP con 50 cupos a $45, General con 200 cupos a $25 y Early 
 Entonces el sistema guarda la configuración
 Y la suma de cupos 300 no supera el aforo del evento
 ```
-
+**CP-F02. Early Bird disponible solo en su ventana de tiempo**
+ 
+```gherkin
+Dado que existe un evento en estado borrador
+Cuando se configura el tier Early Bird con fecha de inicio "2026-04-01" y fin "2026-04-10"
+Entonces el tier está disponible únicamente dentro de ese período
+Y fuera de esa ventana el tier no aparece como opción de compra
+```
 
 ## HU-03: Visualización de eventos y disponibilidad
 
