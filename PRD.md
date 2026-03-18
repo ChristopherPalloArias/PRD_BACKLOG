@@ -80,6 +80,10 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - El ticket confirmado solo se genera cuando la compra ha sido exitosa.
 - No se contemplan reembolsos ni cancelaciones en esta primera versión.
 
+### 3.2 Supuestos
+
+- El sistema procesa pagos únicamente en dólares.
+- Los eventos publicados son visibles para todos los compradores sin la necesidad de utilizar filtros.
 
 
 
