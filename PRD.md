@@ -12,5 +12,10 @@ Esta combinación de presencialidad y mala gestión digital genera una doble fru
 
 Un sistema de ticketing ágil que asegura la disponibilidad real mediante un temporizador estricto de reserva de 10 minutos y la liberación automática de entradas ante fallos de pago. Al llevar la gestión al entorno digital de forma eficiente, la plataforma permite a los organizadores configurar el aforo por evento, definir precios por categorías (VIP, General, Early Bird) y maximizar la ocupación de la sala. Para el comprador, esto elimina la frustración y se traduce en transparencia: si una entrada aparece disponible, lo está.
 
+### 1.3 Actores del sistema
+
+- **Administrador:** crea eventos, configura aforo, define tiers y precios.
+- **Comprador:** consulta disponibilidad, reserva entradas, realiza pago simulado y visualiza su ticket confirmado.
+
 
 
