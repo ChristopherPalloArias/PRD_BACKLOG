@@ -95,10 +95,10 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
 | Riesgo | Probabilidad | Impacto | Mitigación |
 | --- | --- | --- | --- |
-| Pago procesado pero la compra no se refleja para el comprador | Media | Alto |  |
-| Dos compradores adquieren la misma entrada simultáneamente | Alta | Alto |  |
-| Sobreventa por fallo en control de inventario en tiempo real | Media | Alto |  |
-| Administrador configura aforo superior al máximo de la sala | Baja | Alto |  |
-| Early Bird no se desactiva al vencer la ventana de tiempo | Media | Alto |  |
-| El simulador de pago rechaza intentos válidos y el comprador abandona la compra | Alta | Medio |  |
-| Baja demanda en tier VIP | Media | Bajo |  |
+| Pago procesado pero la compra no se refleja para el comprador | Media | Alto | El sistema registra el estado de cada transacción y confirma la compra solo cuando el pago es exitoso |
+| Dos compradores adquieren la misma entrada simultáneamente | Alta | Alto | Se verifica disponibilidad en el momento exacto de la confirmación, garantizando que solo un comprador pueda completar la compra. |
+| Sobreventa por fallo en control de inventario en tiempo real | Media | Alto | La disponibilidad se consulta en tiempo real antes de cualquier confirmación, garantizando que solo un comprador pueda completar la compra |
+| Administrador configura aforo superior al máximo de la sala | Baja | Alto | El sistema bloquea la configuración si el aforo ingresado supera la capacidad máxima registrada para la sala. |
+| Early Bird no se desactiva al vencer la ventana de tiempo | Media | Alto | Un proceso automático monitorea las ventanas de tiempo y desactiva el tier cuando corresponde, sin intervención manual. |
+| El simulador de pago rechaza intentos válidos y el comprador abandona la compra | Alta | Medio | Se muestran mensajes claros del error y se permite reintentar mientras la reserva siga vigente. |
+| Baja demanda en tier VIP | Media | Bajo | Monitorear métricas y ajustar estrategias de precios o promoción si es necesario |
