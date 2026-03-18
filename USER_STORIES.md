@@ -129,6 +129,17 @@ Dado que existe un evento con aforo definido
 Cuando la suma de cupos asignados a los tiers supera el aforo total del evento
 Entonces el sistema no permite guardar la configuración
 ```
+### Casos de Prueba Funcionales (CP-F)
+ 
+**CP-F01. Configuración exitosa de los tres tiers**
+ 
+```gherkin
+Dado que existe un evento con aforo total de 300
+Cuando se configura VIP con 50 cupos a $45, General con 200 cupos a $25 y Early Bird con 50 cupos a $18
+Entonces el sistema guarda la configuración
+Y la suma de cupos 300 no supera el aforo del evento
+```
+
 
 ## HU-03: Visualización de eventos y disponibilidad
 
