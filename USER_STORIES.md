@@ -121,6 +121,14 @@ Dado que existe un evento en estado borrador
 Cuando el administrador asigna a un tier un precio igual o menor a cero
 Entonces el sistema rechaza la configuración
 ```
+**CA-04. Rechazo por suma de cupos mayor al aforo**
+ 
+```gherkin
+Escenario: Cupos por tier exceden el aforo total
+Dado que existe un evento con aforo definido
+Cuando la suma de cupos asignados a los tiers supera el aforo total del evento
+Entonces el sistema no permite guardar la configuración
+```
 
 ## HU-03: Visualización de eventos y disponibilidad
 
