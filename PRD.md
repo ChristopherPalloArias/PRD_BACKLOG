@@ -33,7 +33,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
 - Uso del sistema en un contexto controlado con usuarios preexistentes o acceso previamente habilitado para administrador y comprador.
 - Creación de eventos con aforo configurable por el administrador
-- Validación de que el aforo no supere el máximo permitido del venue
+- Validación de que el aforo no supere el máximo permitido de la sala
 - Configuración de tiers por evento: VIP, General y Early Bird
 - Definición de cupos por tier, respetando que la suma total no supere el aforo del evento
 - Definición de precios por tier por evento
@@ -114,3 +114,15 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 | Servidor cae con el timer activo y la reserva queda en el limbo | Baja | Alto | El estado y los timestamps de cada reserva se persisten en base de datos para poder recuperarlos al reiniciar |
 | Notificaciones duplicadas por reintentos de red | Baja | Bajo | Se acepta el riesgo con manejo básico de idempotencia para evitar envíos repetidos |
 | Inconsistencias entre estado de pago y estado de ticket | Media | Alto | El ticket solo se emite tras validar que el estado del pago y el de la compra son consistentes entre sí |
+
+## 5. Criterios de éxito del MVP
+
+El MVP se considerará exitoso si permite:
+
+- Crear y configurar eventos con aforo, tiers y precios válidos
+- Mostrar disponibilidad real por tier para los compradores
+- Completar el flujo de reserva y pago simulado sin duplicidad de entradas
+- Liberar automáticamente entradas no pagadas en un máximo de 10 minutos
+- Notificar correctamente al comprador en los eventos principales del flujo
+- Generar ticket únicamente en compras exitosas
+
