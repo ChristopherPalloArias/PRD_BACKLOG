@@ -52,6 +52,15 @@ Cuando registra un evento con datos válidos
 Y define un aforo dentro del máximo permitido de la sala
 Entonces el sistema crea el evento en estado borrador
 ```
+**CA-02. Rechazo por aforo superior al máximo**
+ 
+```gherkin
+Escenario: Aforo superior al máximo de la sala
+Dado que el administrador tiene acceso previamente habilitado al sistema
+Y la sala tiene un aforo máximo definido
+Cuando intenta registrar un evento con un aforo superior al permitido
+Entonces el sistema rechaza la creación del evento
+```
 
 ## HU-02: Configuración de tiers y precios por evento
 
