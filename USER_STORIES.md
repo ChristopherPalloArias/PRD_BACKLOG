@@ -113,6 +113,14 @@ Dado que existe un evento en estado borrador
 Cuando el administrador define una ventana de tiempo válida para el tier Early Bird
 Entonces el sistema habilita ese tier únicamente dentro del período configurado
 ```
+**CA-03. Rechazo por precio inválido**
+ 
+```gherkin
+Escenario: Precio no válido en un tier
+Dado que existe un evento en estado borrador
+Cuando el administrador asigna a un tier un precio igual o menor a cero
+Entonces el sistema rechaza la configuración
+```
 
 ## HU-03: Visualización de eventos y disponibilidad
 
