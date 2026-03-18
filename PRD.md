@@ -73,6 +73,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - El tier **Early Bird** está disponible solo dentro de una ventana de tiempo definida por el administrador.
 - Los precios se configuran por tier y por evento.
 - La suma de cupos asignados a los tiers no puede superar el aforo total del evento.
+- Un comprador puede adquirir un máximo de 6 entradas por transacción.
 - Una reserva tiene una vigencia máxima de **10 minutos** para completar el pago.
 - Si el pago falla o la reserva expira, las entradas deben liberarse automáticamente.
 - Las notificaciones al comprador deben emitirse inmediatamente después del resultado relevante.
