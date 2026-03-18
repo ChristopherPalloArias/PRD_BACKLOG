@@ -147,6 +147,14 @@ Cuando se configura el tier Early Bird con fecha de inicio "2026-04-01" y fin "2
 Entonces el tier está disponible únicamente dentro de ese período
 Y fuera de esa ventana el tier no aparece como opción de compra
 ```
+**CP-F03. Rechazo de precios inválidos**
+ 
+```gherkin
+Dado que existe un evento en estado borrador
+Cuando se asigna precio $0 al tier General
+Y precio -5 al tier VIP
+Entonces el sistema rechaza ambas configuraciones
+```
 
 ## HU-03: Visualización de eventos y disponibilidad
 
