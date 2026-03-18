@@ -30,7 +30,7 @@ Una historia de usuario se considera terminada cuando cumple con:
 
 ## HU-01: Creación de evento de obra de teatro
 
-*Story Points: 5*
+**Story Points: 5**
 
 ### Historia de Usuario
 
@@ -85,7 +85,7 @@ Entonces el sistema no crea el evento
 
 ## HU-02: Configuración de tiers y precios por evento
 
-*Story Points: 5*
+**Story Points: 5**
 
 ### Historia de Usuario
 
@@ -94,6 +94,17 @@ Como administrador
 Quiero configurar los tiers, cupos y precios de una obra de teatro
 
 Para ofrecer una estructura de venta alineada con la estrategia comercial del evento
+
+### Criterios de Aceptación (CA)
+
+**CA-01. Configuración válida de tiers**
+```gherkin
+Escenario: Configuración comercial exitosa
+Dado que existe un evento en estado borrador
+Cuando el administrador define los tiers VIP, General y Early Bird
+Y asigna cupos y precios válidos a cada tier
+Entonces el sistema guarda la configuración comercial del evento
+```
 
 
 ## HU-03: Visualización de eventos y disponibilidad
