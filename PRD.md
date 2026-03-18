@@ -32,7 +32,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
  ### 2.1 IN scope
 
 - Creación de eventos con aforo configurable por el administrador
-- Validación de que el aforo no supere e máximo permitido del venue
+- Validación de que el aforo no supere el máximo permitido del venue
 - Configuración de tiers por evento: VIP, General y Early Bird
 - Definición de cupos por tier, respetando que la suma total no supere el aforo del evento
 - Definición de precios por tier por evento
@@ -59,6 +59,23 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - Integración con correo o mensajería real
 - Selección avanzada de asientos numerados
 - Promociones distintas a Early Bird
+
+## 3. Reglas de negocio y supuestos
+
+### 3.1 Reglas de negocio
+
+- El sistema maneja dos roles: **Administrador** y **Comprador**.
+- El administrador configura el aforo del evento y este no puede superar el máximo de la sala.
+- Cada evento puede tener hasta tres tiers: **VIP**, **General** y **Early Bird**.
+- El tier **Early Bird** está disponible solo dentro de una ventana de tiempo definida por el administrador.
+- Los precios se configuran por tier y por evento.
+- La suma de cupos asignados a los tiers no puede superar el aforo total del evento.
+- Una reserva tiene una vigencia máxima de **10 minutos** para completar el pago.
+- Si el pago falla o la reserva expira, las entradas deben liberarse automáticamente.
+- Las notificaciones al comprador deben emitirse inmediatamente después del resultado relevante.
+- El pago es simulado dentro del MVP.
+- El ticket confirmado solo se genera cuando la compra ha sido exitosa.
+- No se contemplan reembolsos ni cancelaciones en esta primera versión.
 
 
 
