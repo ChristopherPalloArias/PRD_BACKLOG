@@ -43,7 +43,7 @@ Para prepararlo para su configuración comercial y posterior publicación
 
 ## HU-02: Configuración de tiers y precios por evento
 
-Story Points: 5
+*Story Points: 5*
 
 ### Historia de Usuario
 
@@ -52,4 +52,17 @@ Como administrador
 Quiero configurar los tiers, cupos y precios de una obra de teatro
 
 Para ofrecer una estructura de venta alineada con la estrategia comercial del evento
+
+
+## HU-03: Visualización de eventos y disponibilidad
+
+*Story Points: 3*
+
+### Historia de Usuario
+
+Como comprador
+
+Quiero consultar los eventos disponibles y la disponibilidad por tier
+
+Para elegir una entrada según mis preferencias y presupuesto
 
