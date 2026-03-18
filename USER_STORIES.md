@@ -90,3 +90,15 @@ Como sistema
 Quiero liberar automáticamente las entradas reservadas que no se concretan
 
 Para mantener disponibilidad real y evitar bloqueo innecesario de inventario
+
+## HU-06: Notificaciones al comprador
+
+*Story Points: 3*
+
+### Historia de Usuario
+
+Como comprador
+
+Quiero recibir notificaciones inmediatas sobre el resultado de mi proceso de compra
+
+Para conocer oportunamente el estado de mi reserva o compra
