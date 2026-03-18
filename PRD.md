@@ -99,7 +99,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 | Dos compradores adquieren la misma entrada simultáneamente | Alta | Alto | Se verifica disponibilidad en el momento exacto de la confirmación, garantizando que solo un comprador pueda completar la compra. |
 | Sobreventa por fallo en control de inventario en tiempo real | Media | Alto | La disponibilidad se consulta en tiempo real antes de cualquier confirmación, garantizando que solo un comprador pueda completar la compra |
 | Administrador configura aforo superior al máximo de la sala | Baja | Alto | El sistema bloquea la configuración si el aforo ingresado supera la capacidad máxima registrada para la sala. |
-| Early Bird no se desactiva al vencer la ventana de tiempo | Media | Alto | Un proceso automático monitorea las ventanas de tiempo y desactiva el tier cuando corresponde, sin intervención manual. |
+| Early Bird no se desactiva al vencer la ventana de tiempo | Media | Alto | El scheduler monitorea las ventanas de tiempo y desactiva el tier cuando corresponde, sin intervención manual. |
 | El simulador de pago rechaza intentos válidos y el comprador abandona la compra | Alta | Medio | Se muestran mensajes claros del error y se permite reintentar mientras la reserva siga vigente. |
 | Baja demanda en tier VIP | Media | Bajo | Monitorear métricas y ajustar estrategias de precios o promoción si es necesario |
 
@@ -107,9 +107,10 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
 | Riesgo | Probabilidad | Impacto | Mitigación |
 | --- | --- | --- | --- |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| Condiciones de carrera al comprar la última entrada simultáneamente |  |  |  |
+| Fallo de pago sin notificación al comprador |  |  |  |
+| Caída del scheduler y entradas bloqueadas indefinidamente |  |  |  |
+| Latencia hace que el timer del front difiera del back |  |  |  |
+| Servidor cae con timer activo y la reserva queda en el limbo |  |  |  |
+| Notificaciones duplicadas por reintentos de red |  |  |  |
+| Inconsistencias entre estado de pago y estado de ticket |  |  |  |
