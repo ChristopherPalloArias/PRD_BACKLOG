@@ -88,3 +88,9 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - La reserva expira según el reloj del servidor, no del comprador.
 - El ticket confirmado solo se genera cuando el pago ha sido exitoso.
 - Para el alcance de este MVP, se asume un entorno controlado con usuarios previamente habilitados, por lo que el registro y el inicio de sesión no forman parte de esta versión inicial.
+
+## 4. Riesgos
+
+### 4.1 Riesgos de negocio
+
+| Riesgo | Probabilidad | Impacto | Mitigación |
