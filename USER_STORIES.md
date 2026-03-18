@@ -66,3 +66,15 @@ Quiero consultar los eventos disponibles y la disponibilidad por tier
 
 Para elegir una entrada según mis preferencias y presupuesto
 
+
+## HU-04: Reserva y compra de entrada con pago simulado
+
+*Story Points: 8*
+
+### Historia de Usuario
+
+Como comprador
+
+Quiero reservar una entrada y completar un pago simulado dentro de un tiempo límite
+
+Para asegurar mi acceso al evento sin perder disponibilidad durante el proceso
