@@ -32,7 +32,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
  ### 2.1 IN scope
 
 - Creación de eventos con aforo configurable por el administrador
-- Validación de que el aforo no supere el máximo permitido del venue
+- Validación de que el aforo no supere e máximo permitido del venue
 - Configuración de tiers por evento: VIP, General y Early Bird
 - Definición de cupos por tier, respetando que la suma total no supere el aforo del evento
 - Definición de precios por tier por evento
@@ -46,7 +46,19 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - Notificaciones inmediatas al comprador en caso de compra exitosa, pago fallido o liberación de la entrada
 - Visualización del ticket confirmado después de una compra exitosa
 
+### 2.2 OUT scope
 
+- Registro de administrador
+- Registro de comprador
+- Inicio de sesión para usuarios
+- Pasarela de pago real
+- Cancelaciones y reembolsos por parte del comprador
+- Reportes y métricas de ventas para el administrador
+- App móvil nativa
+- Soporte multilenguaje
+- Integración con correo o mensajería real
+- Selección avanzada de asientos numerados
+- Promociones distintas a Early Bird
 
 
 
