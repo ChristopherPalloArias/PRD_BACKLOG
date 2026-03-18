@@ -71,6 +71,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - El administrador configura el aforo del evento y este no puede superar el máximo de la sala.
 - Cada evento puede tener hasta tres tiers: **VIP**, **General** y **Early Bird**.
 - El tier **Early Bird** está disponible solo dentro de una ventana de tiempo definida por el administrador.
+- Al vencer la ventana del **Early Bird**, los cupos no vendidos de ese tier se suman automáticamente a la disponibilidad del tier **General**.
 - Los precios se configuran por tier y por evento.
 - La suma de cupos asignados a los tiers no puede superar el aforo total del evento.
 - Un comprador puede adquirir un máximo de 6 entradas por transacción.
