@@ -17,5 +17,21 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - **Administrador:** crea eventos, configura aforo, define tiers y precios.
 - **Comprador:** consulta disponibilidad, reserva entradas, realiza pago simulado y visualiza su ticket confirmado.
 
+### 1.4 Objetivos del MVP 
+
+| Objetivo | KPI de éxito |
+| --- | --- |
+| Reducir el bloqueo inútil de entradas por fallos de pago o timeouts | 99.9% de reservas no pagadas liberadas en ≤ 10 minutos |
+| Impulsar ventas tempranas | 100% del tier Early Bird agotado antes de su fecha de caducidad |
+| Evitar la sobreventa | 0 reportes de entradas duplicadas para una misma obra |
+| Garantizar una experiencia de compra fluida | Flujo de compra completo en ≤ 5 minutos |
+| Brindar visibilidad de disponibilidad en tiempo real | Tasa de abandono al seleccionar entradas ≤ 10% |
+
+
+
+
+
+
+
 
 
