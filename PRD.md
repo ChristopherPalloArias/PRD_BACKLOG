@@ -107,10 +107,10 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
 | Riesgo | Probabilidad | Impacto | Mitigación |
 | --- | --- | --- | --- |
-| Condiciones de carrera al comprar la última entrada simultáneamente |  |  |  |
-| Fallo de pago sin notificación al comprador |  |  |  |
-| Caída del scheduler y entradas bloqueadas indefinidamente |  |  |  |
-| Latencia hace que el timer del front difiera del back |  |  |  |
-| Servidor cae con timer activo y la reserva queda en el limbo |  |  |  |
-| Notificaciones duplicadas por reintentos de red |  |  |  |
-| Inconsistencias entre estado de pago y estado de ticket |  |  |  |
+| Condiciones de carrera al comprar la última entrada simultáneamente | Alta | Alto |  |
+| Fallo de pago sin notificación al comprador | Media | Alto |  |
+| Caída del scheduler y entradas bloqueadas indefinidamente | Baja | Alto |  |
+| Latencia hace que el timer del front difiera del back | Media | Medio |  |
+| Servidor cae con timer activo y la reserva queda en el limbo | Baja | Alto |  |
+| Notificaciones duplicadas por reintentos de red | Baja | Bajo |  |
+| Inconsistencias entre estado de pago y estado de ticket | Media | Alto |  |
