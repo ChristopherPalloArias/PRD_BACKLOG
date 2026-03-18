@@ -31,6 +31,7 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 
  ### 2.1 IN scope
 
+- Uso del sistema en un contexto controlado con usuarios preexistentes o acceso previamente habilitado para administrador y comprador.
 - Creación de eventos con aforo configurable por el administrador
 - Validación de que el aforo no supere el máximo permitido del venue
 - Configuración de tiers por evento: VIP, General y Early Bird
