@@ -43,8 +43,9 @@ Un sistema de ticketing ágil que asegura la disponibilidad real mediante un tem
 - Simulación de pasarela de pago con resultado exitoso o fallido
 - Liberación automática de entradas cuando el pago falla
 - Liberación automática de entradas cuando expira la reserva
-- Notificaciones inmediatas al comprador en caso de compra exitosa, pago fallido o liberación de la entrada
+- Notificaciones inmediatas en la interfaz del sistema (pantalla) al comprador en caso de compra exitosa, pago fallido o liberación de la entrada
 - Visualización del ticket confirmado después de una compra exitosa
+
 
 ### 2.2 OUT scope
 
