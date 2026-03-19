@@ -636,3 +636,10 @@ Dado que existe un ticket confirmado para el evento "Bodas de Sangre", tier VIP,
 Cuando el comprador visualiza ese ticket
 Entonces el sistema muestra correctamente el nombre del evento, el tier adquirido y la fecha de compra
 ```
+**CP-F03. Sin ticket para compra fallida o expirada**
+ 
+```gherkin
+Dado que una reserva del comprador expiró sin completar el pago
+Cuando el comprador consulta sus tickets
+Entonces el sistema no muestra ningún ticket asociado a esa operación
+```
