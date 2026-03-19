@@ -300,7 +300,7 @@ Entonces el sistema refleja esa entrada como no disponible hasta que la reserva 
 ---
 ## HU-04: Reserva y compra de entrada con pago simulado
 
-*Story Points: 8*
+**Story Points: 8**
 
 ### Historia de Usuario
 
@@ -309,6 +309,11 @@ Como comprador
 Quiero reservar una entrada y completar un pago simulado dentro de un tiempo límite
 
 Para asegurar mi acceso al evento sin perder disponibilidad durante el proceso
+### Criterios de Aceptación (CA)
+**CA-01. Compra exitosa dentro del tiempo permitido**
+**CA-02. Compra fallida por pago rechazado**
+**CA-03. Expiración de la reserva**
+**CA-04. Protección ante compra simultánea**
 
 ## HU-05: Liberación automática por fallo de pago o expiración
 
