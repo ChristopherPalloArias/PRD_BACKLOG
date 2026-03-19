@@ -526,7 +526,14 @@ Dado que el comprador completa un pago exitoso
 Cuando el sistema confirma la compra
 Entonces el comprador recibe una notificación de compra confirmada
 ```
-
+**CA-02. Notificación de pago fallido**
+ 
+```gherkin
+Escenario: Notificación de pago rechazado
+Dado que el comprador intenta completar el pago de una reserva
+Cuando el sistema registra un rechazo de pago
+Entonces el comprador recibe una notificación de pago fallido
+```
 
 ## HU-07: Visualización de ticket confirmado
 
