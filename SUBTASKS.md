@@ -37,12 +37,12 @@
 
 ### DEV
 
-- Implementar consulta de eventos publicados
-- Implementar consulta de disponibilidad por tier
-- Filtrar eventos no publicados
-- Excluir tiers agotados de la disponibilidad activa
-- Excluir Early Bird fuera de vigencia
-- Presentar disponibilidad vigente por tier
+- [ ] Implementar consulta de eventos publicados
+- [ ] Implementar consulta de disponibilidad por tier
+- [ ] Filtrar eventos no publicados
+- [ ] Excluir tiers agotados de la disponibilidad activa
+- [ ] Excluir Early Bird fuera de vigencia
+- [ ] Presentar disponibilidad vigente por tier
 ### QA
 ---
 
@@ -50,15 +50,15 @@
 
 ### DEV
 
-- Crear entidad y tabla de reservas con estado y timestamp
-- Implementar creación de reserva para un tier disponible
-- Implementar servicio o endpoint de pago simulado
-- Validar disponibilidad real antes de reservar
-- Confirmar compra ante pago exitoso dentro del tiempo permitido
-- Descontar inventario al confirmar la compra
-- Evitar confirmación de compras sobre reservas vencidas
-- Asociar compra confirmada con ticket emitido
-- Manejar rechazo de pago sin confirmar la entrada
+- [ ] Crear entidad y tabla de reservas con estado y timestamp
+- [ ] Implementar creación de reserva para un tier disponible
+- [ ] Implementar servicio o endpoint de pago simulado
+- [ ] Validar disponibilidad real antes de reservar
+- [ ] Confirmar compra ante pago exitoso dentro del tiempo permitido
+- [ ] Descontar inventario al confirmar la compra
+- [ ] Evitar confirmación de compras sobre reservas vencidas
+- [ ] Asociar compra confirmada con ticket emitido
+- [ ] Manejar rechazo de pago sin confirmar la entrada
 ### QA
 ---
 
@@ -66,12 +66,12 @@
 
 ### DEV
 
-- Implementar detección de reservas vencidas
-- Liberar automáticamente entradas de reservas expiradas
-- Liberar automáticamente entradas de pagos rechazados
-- Actualizar estado de la reserva luego de la liberación
-- Reflejar nuevamente la entrada en disponibilidad
-- Implementar proceso de respaldo para reservas no liberadas por el mecanismo principal
-- Evitar liberación sobre compras ya confirmadas
+- [ ] Implementar detección de reservas vencidas
+- [ ] Liberar automáticamente entradas de reservas expiradas
+- [ ] Liberar automáticamente entradas de pagos rechazados
+- [ ] Actualizar estado de la reserva luego de la liberación
+- [ ] Reflejar nuevamente la entrada en disponibilidad
+- [ ] Implementar proceso de respaldo para reservas no liberadas por el mecanismo principal
+- [ ] Evitar liberación sobre compras ya confirmadas
 ### QA
 ---
