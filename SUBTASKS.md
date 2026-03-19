@@ -111,5 +111,9 @@
 
 ## HU-07: Visualización de ticket confirmado — SP: 2
 ### DEV
+- [ ] Implementar consulta de ticket confirmado por compra
+- [ ] Mostrar datos del evento, tier y compra
+- [ ] Permitir visualización solo para compras confirmadas
+- [ ] Restringir acceso al ticket al comprador propietario
 ### QA
 ---
