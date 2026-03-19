@@ -320,6 +320,13 @@ Entonces el sistema confirma la compra
 Y descuenta la entrada del inventario disponible
 ```
 **CA-02. Compra fallida por pago rechazado**
+```gherkin
+Escenario: Pago simulado rechazado
+Dado que existe una reserva activa dentro del tiempo permitido
+Cuando el sistema recibe un resultado de pago rechazado
+Entonces la compra se marca como fallida
+Y la entrada no queda confirmada para el comprador
+```
 **CA-03. Expiración de la reserva**
 **CA-04. Protección ante compra simultánea**
 
