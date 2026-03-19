@@ -368,6 +368,14 @@ Cuando transcurren 10 minutos desde su creación sin que se complete el pago
 Entonces el sistema expira la reserva
 Y la entrada vuelve a estar disponible en el inventario
 ```
+**CP-F04. Protección ante compra simultánea sobre la última entrada**
+ 
+```gherkin
+Dado que solo queda 1 entrada disponible en el tier VIP del evento "Bodas de Sangre"
+Cuando dos compradores intentan completar la compra de forma concurrente
+Entonces el sistema confirma la compra únicamente para uno de los dos compradores
+Y el segundo recibe un resultado de no disponibilidad
+```
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
