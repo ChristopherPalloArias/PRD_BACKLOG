@@ -542,7 +542,15 @@ Dado que una reserva del comprador expira sin pago exitoso
 Cuando el sistema libera la entrada
 Entonces el comprador recibe una notificación informando la liberación
 ```
-
+### Casos de Prueba Funcionales (CP-F)
+ 
+**CP-F01. Notificación de compra confirmada**
+ 
+```gherkin
+Dado que el comprador tiene una reserva activa sobre el tier General
+Cuando completa un pago exitoso antes de que transcurran 10 minutos
+Entonces el sistema emite una notificación de compra confirmada al comprador
+```
 ## HU-07: Visualización de ticket confirmado
 
 *Story Points: 2*
