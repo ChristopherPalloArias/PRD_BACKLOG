@@ -101,6 +101,11 @@
 ## HU-06: Notificaciones al comprador — SP: 3
  
 ### DEV
+- [ ] Implementar servicio simulado de notificaciones
+- [ ] Enviar notificación al confirmar compra
+- [ ] Enviar notificación al rechazar pago
+- [ ] Enviar notificación al liberar una reserva expirada
+- [ ] Asociar el motivo correcto a cada notificación emitida
 ### QA
 
 
