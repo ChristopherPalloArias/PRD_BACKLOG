@@ -72,6 +72,12 @@
 - [ ] Asociar compra confirmada con ticket emitido
 - [ ] Manejar rechazo de pago sin confirmar la entrada
 ### QA
+- [ ] Diseñar matriz de datos para reserva y pago simulado
+- [ ] Ejecutar prueba de compra exitosa dentro del tiempo permitido
+- [ ] Ejecutar prueba de compra fallida por pago rechazado
+- [ ] Ejecutar prueba de expiración de reserva luego de 10 minutos
+- [ ] Ejecutar prueba de doble intento sobre la última entrada disponible
+- [ ] Verificar que una compra confirmada descuente inventario y genere ticket
 ---
 
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
