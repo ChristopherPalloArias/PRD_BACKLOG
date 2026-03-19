@@ -28,6 +28,7 @@ Una historia de usuario se considera terminada cuando cumple con:
 - Historia registrada en el tablero de GitHub Projects
 - Commit atómico subido al repositorio con mensaje descriptivo
 
+---
 ## HU-01: Creación de evento de obra de teatro
 
 **Story Points: 5**
@@ -112,8 +113,14 @@ Dado que el administrador intenta crear un evento con aforo inválido
 Cuando el sistema rechaza la operación
 Entonces no quedan registros parciales del evento en base de datos
 ```
-- *CP-NF02:* Crear tres eventos consecutivos y verificar que cada operación queda registrada con usuario, fecha y resultado para trazabilidad administrativa.
-
+**CP-NF02. Trazabilidad de operaciones**
+ 
+```gherkin
+Dado que el administrador crea tres eventos consecutivos
+Cuando cada operación se completa
+Entonces cada una queda registrada con usuario, fecha y resultado
+```
+---
 
 ## HU-02: Configuración de tiers y precios por evento
 
