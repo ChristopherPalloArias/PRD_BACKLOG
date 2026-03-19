@@ -42,7 +42,7 @@
 
 ## HU-04: Reserva y compra de entrada con pago simulado — SP: 8
 
-### DEV Funcional
+### DEV
 
 - Crear entidad y tabla de reservas con estado y timestamp
 - Implementar creación de reserva para un tier disponible
@@ -53,16 +53,6 @@
 - Evitar confirmación de compras sobre reservas vencidas
 - Asociar compra confirmada con ticket emitido
 - Manejar rechazo de pago sin confirmar la entrada
-
-
-### DEV No Funcional
-
-- Implementar control de concurrencia para la última entrada disponible
-- Usar hora del servidor como referencia de verdad del temporizador
-- Persistir timestamps de reserva para control de expiración
-- Registrar logs de reserva, pago, confirmación y rechazo
-- Asegurar consistencia transaccional entre reserva, pago y compra
-
 ---
 
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
