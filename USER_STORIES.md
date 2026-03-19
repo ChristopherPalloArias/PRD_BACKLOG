@@ -235,6 +235,7 @@ Para elegir una entrada según mis preferencias y presupuesto
 ### Criterios de Aceptación (CA)
 **CP-F01. Cartelera con eventos y tiers vigentes**
  
+
 ```gherkin
 Dado que existen dos eventos publicados con entradas disponibles en todos sus tiers
 Cuando el comprador consulta la cartelera
@@ -249,7 +250,14 @@ Cuando el comprador consulta el detalle del evento
 Entonces el sistema muestra el tier General como no disponible
 Y los tiers VIP y Early Bird siguen mostrándose con su disponibilidad real
 ```
-
+**CP-F03. Early Bird vencido no aparece como opción**
+ 
+```gherkin
+Dado que el tier Early Bird del evento "Bodas de Sangre" venció el "2026-04-10"
+Y la fecha actual es posterior a esa fecha
+Cuando el comprador consulta el detalle del evento
+Entonces el sistema no presenta el tier Early Bird como opción de compra
+```
 ### Casos de Prueba Funcionales (CP-F)
 
 
