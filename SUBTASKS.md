@@ -32,6 +32,12 @@
 - [ ] Implementar vigencia temporal del tier Early Bird
 - [ ] Permitir guardar configuración comercial del evento en borrador
 ### QA
+- [ ] Diseñar matriz de datos para combinaciones de tiers, precios y cupos
+- [ ] Validar configuración exitosa de VIP, General y Early Bird
+- [ ] Validar vigencia correcta del Early Bird dentro del período definido
+- [ ] Validar rechazo por precio igual a cero o negativo
+- [ ] Validar rechazo por suma de cupos mayor al aforo
+- [ ] Verificar que la configuración válida quede correctamente almacenada
 ---
 
 ## HU-03: Visualización de eventos y disponibilidad — SP: 3
