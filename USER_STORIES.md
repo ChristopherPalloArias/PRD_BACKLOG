@@ -534,6 +534,14 @@ Dado que el comprador intenta completar el pago de una reserva
 Cuando el sistema registra un rechazo de pago
 Entonces el comprador recibe una notificación de pago fallido
 ```
+**CA-03. Notificación de liberación de reserva**
+ 
+```gherkin
+Escenario: Notificación de liberación por expiración
+Dado que una reserva del comprador expira sin pago exitoso
+Cuando el sistema libera la entrada
+Entonces el comprador recibe una notificación informando la liberación
+```
 
 ## HU-07: Visualización de ticket confirmado
 
