@@ -352,6 +352,14 @@ Y completa un pago exitoso a los 4 minutos de haberla creado
 Entonces el sistema confirma la compra
 Y el inventario del tier General pasa a 9 entradas disponibles
 ```
+**CP-F02. Compra fallida por pago rechazado**
+ 
+```gherkin
+Dado que existe una reserva activa con 6 minutos de vigencia restante
+Cuando el simulador de pago retorna un resultado rechazado
+Entonces la compra queda marcada como fallida
+Y la entrada no queda confirmada para el comprador
+```
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
