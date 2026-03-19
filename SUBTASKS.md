@@ -51,6 +51,11 @@
 - [ ] Excluir Early Bird fuera de vigencia
 - [ ] Presentar disponibilidad vigente por tier
 ### QA
+- [ ] Diseñar datos de prueba para eventos publicados y no publicados
+- [ ] Validar visualización de eventos publicados con entradas disponibles
+- [ ] Validar que un tier agotado aparezca como no disponible
+- [ ] Validar que Early Bird vencido no se muestre como opción disponible
+- [ ] Verificar que solo se muestre disponibilidad vigente por tier
 ---
 
 ## HU-04: Reserva y compra de entrada con pago simulado — SP: 8
