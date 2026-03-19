@@ -565,6 +565,16 @@ Dado que la reserva del comprador lleva 10 minutos sin pago exitoso
 Cuando el sistema libera la entrada automáticamente
 Entonces el comprador recibe una notificación informando que su reserva fue liberada
 ```
+### Casos de Prueba No Funcionales (CP-NF)
+ 
+**CP-NF01. Idempotencia para evitar notificaciones duplicadas**
+ 
+```gherkin
+Dado que el sistema intenta emitir una notificación de compra confirmada
+Cuando la operación se ejecuta dos veces por reintento de red
+Entonces el comprador recibe la notificación una única vez
+```
+
 ## HU-07: Visualización de ticket confirmado
 
 *Story Points: 2*
