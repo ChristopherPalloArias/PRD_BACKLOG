@@ -59,7 +59,7 @@
 ---
 
 ## HU-04: Reserva y compra de entrada con pago simulado — SP: 8
-
+#### **Justificación SP:** Historia de alta complejidad. Involucra manejo de estados, ventana temporal, inventario, concurrencia y consistencia transaccional.
 ### DEV
 
 - [ ] Crear entidad y tabla de reservas con estado y timestamp
