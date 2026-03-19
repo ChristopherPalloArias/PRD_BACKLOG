@@ -385,6 +385,15 @@ Cuando el sistema procesa todas las solicitudes
 Entonces solo una compra queda confirmada
 Y no se genera duplicidad de venta
 ```
+**CP-NF02. Vigencia de reserva calculada desde el servidor**
+ 
+```gherkin
+Dado que el comprador genera una reserva
+Cuando el sistema registra el inicio del temporizador
+Entonces la vigencia de 10 minutos se calcula con la hora del servidor
+Y no depende del reloj del dispositivo del comprador
+```
+
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
