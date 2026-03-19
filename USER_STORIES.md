@@ -233,9 +233,18 @@ Quiero consultar los eventos disponibles y la disponibilidad por tier
 Para elegir una entrada según mis preferencias y presupuesto
 
 ### Criterios de Aceptación (CA)
-**CP-F01. Cartelera con eventos y tiers vigentes**
+**CA-01. Consulta de eventos publicados**
  
+```gherkin
+Escenario: Visualización de eventos disponibles
+Dado que existen eventos publicados con entradas disponibles
+Cuando el comprador consulta la cartelera
+Entonces el sistema muestra los eventos disponibles para compra
+Y presenta la disponibilidad vigente por tier
+```
 
+### Casos de Prueba Funcionales (CP-F)
+**CP-F01. Cartelera con eventos y tiers vigentes** 
 ```gherkin
 Dado que existen dos eventos publicados con entradas disponibles en todos sus tiers
 Cuando el comprador consulta la cartelera
@@ -258,9 +267,6 @@ Y la fecha actual es posterior a esa fecha
 Cuando el comprador consulta el detalle del evento
 Entonces el sistema no presenta el tier Early Bird como opción de compra
 ```
-### Casos de Prueba Funcionales (CP-F)
-
-
 ### Casos de Prueba No Funcionales (CP-NF)
 
 
