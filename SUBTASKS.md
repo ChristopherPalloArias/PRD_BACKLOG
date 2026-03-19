@@ -62,3 +62,17 @@
 - Registrar métricas básicas de uso de la consulta
 
 ---
+
+## HU-04: Reserva y compra de entrada con pago simulado — SP: 8
+
+### DEV Funcional
+
+- Crear entidad y tabla de reservas con estado y timestamp
+- Implementar creación de reserva para un tier disponible
+- Implementar servicio o endpoint de pago simulado
+- Validar disponibilidad real antes de reservar
+- Confirmar compra ante pago exitoso dentro del tiempo permitido
+- Descontar inventario al confirmar la compra
+- Evitar confirmación de compras sobre reservas vencidas
+- Asociar compra confirmada con ticket emitido
+- Manejar rechazo de pago sin confirmar la entrada
