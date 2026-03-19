@@ -30,3 +30,10 @@
 - [ ] Validar que la suma de cupos no supere el aforo del evento
 - [ ] Implementar vigencia temporal del tier Early Bird
 - [ ] Permitir guardar configuración comercial del evento en borrador
+
+### DEV No Funcional
+
+- [ ] Asegurar integridad referencial entre evento y tiers
+- [ ] Registrar logs de cambios en configuración de tiers y precios
+- [ ] Manejar errores de configuración de forma consistente
+- [ ] Validar consistencia de fechas para la vigencia de Early Bird
