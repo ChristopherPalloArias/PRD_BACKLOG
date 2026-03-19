@@ -551,6 +551,13 @@ Dado que el comprador tiene una reserva activa sobre el tier General
 Cuando completa un pago exitoso antes de que transcurran 10 minutos
 Entonces el sistema emite una notificación de compra confirmada al comprador
 ```
+**CP-F02. Notificación de pago rechazado**
+ 
+```gherkin
+Dado que el comprador tiene una reserva activa con 7 minutos de vigencia
+Cuando el simulador de pago retorna un resultado rechazado
+Entonces el sistema emite una notificación de pago fallido al comprador
+```
 ## HU-07: Visualización de ticket confirmado
 
 *Story Points: 2*
