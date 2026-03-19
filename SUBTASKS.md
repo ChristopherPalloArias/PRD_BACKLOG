@@ -83,7 +83,7 @@
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
 
 ### DEV
-
+#### **Justificación SP:** Alta complejidad por automatización, asincronía, procesos de respaldo y necesidad de preservar la integridad del inventario en todo momento.
 - [ ] Implementar detección de reservas vencidas
 - [ ] Liberar automáticamente entradas de reservas expiradas
 - [ ] Liberar automáticamente entradas de pagos rechazados
