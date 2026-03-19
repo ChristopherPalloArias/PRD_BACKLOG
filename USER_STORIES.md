@@ -612,3 +612,11 @@ Dado que existe un ticket confirmado asociado a una compra exitosa
 Cuando el comprador lo visualiza
 Entonces el sistema muestra correctamente la información del evento, el tier adquirido y la compra realizada
 ```
+**CA-03. Ausencia de ticket en compra no confirmada**
+ 
+```gherkin
+Escenario: Compra sin ticket por no haberse confirmado
+Dado que una reserva no finalizó con pago exitoso
+Cuando el comprador consulta sus tickets
+Entonces el sistema no genera ni muestra un ticket asociado a esa operación
+```
