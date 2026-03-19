@@ -290,6 +290,14 @@ Dado que 50 compradores consultan la cartelera de forma simultánea
 Cuando el sistema procesa todas las solicitudes
 Entonces cada consulta obtiene respuesta en un tiempo aceptable
 ```
+**CP-NF02. Consistencia entre disponibilidad mostrada y reservas activas**
+ 
+```gherkin
+Dado que existe una entrada reservada pero aún no pagada para el tier General
+Cuando el comprador consulta la disponibilidad del evento
+Entonces el sistema refleja esa entrada como no disponible hasta que la reserva expire o se confirme
+```
+---
 ## HU-04: Reserva y compra de entrada con pago simulado
 
 *Story Points: 8*
