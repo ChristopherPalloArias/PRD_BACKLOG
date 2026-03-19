@@ -4,7 +4,7 @@
 
 ## HU-01: Creación de evento de obra de teatro — SP: 5
 
-### DEV Funcional
+### DEV
 
 - Crear entidad y tabla de eventos
 - Implementar endpoint o servicio de creación de eventos
