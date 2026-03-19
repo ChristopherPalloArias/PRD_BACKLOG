@@ -30,7 +30,7 @@
 
 ## HU-03: Visualización de eventos y disponibilidad — SP: 3
 
-### DEV Funcional
+### DEV
 
 - Implementar consulta de eventos publicados
 - Implementar consulta de disponibilidad por tier
@@ -38,13 +38,6 @@
 - Excluir tiers agotados de la disponibilidad activa
 - Excluir Early Bird fuera de vigencia
 - Presentar disponibilidad vigente por tier
-
-### DEV No Funcional
-
-- Optimizar consultas de cartelera y disponibilidad
-- Manejar respuestas vacías y errores de consulta
-- Registrar métricas básicas de uso de la consulta
-
 ---
 
 ## HU-04: Reserva y compra de entrada con pago simulado — SP: 8
