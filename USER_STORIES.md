@@ -80,8 +80,15 @@ Y existe una sala con aforo máximo de 300
 Cuando registra un evento con nombre "Bodas de Sangre", fecha "2026-05-10" y aforo 250
 Entonces el sistema crea el evento en estado borrador con aforo 250
 ```
-
-- *CP-F02:* Registrar un evento en una sala con aforo máximo 200, intentando configurar un aforo de 201. *Resultado esperado:* el sistema rechaza la operación y no persiste el evento.
+**CP-F02. Rechazo por aforo superior al máximo**
+ 
+```gherkin
+Dado que el administrador tiene acceso al sistema
+Y existe una sala con aforo máximo de 200
+Cuando registra un evento con aforo 201
+Entonces el sistema rechaza la operación
+Y el evento no queda persistido
+```
 - *CP-F03:* Registrar un evento con nombre "Bodas de Sangre" y sala válida, omitiendo la fecha. *Resultado esperado:* el sistema no crea el evento.
 - *CP-F04:* Enviar el registro de un evento sin nombre ni fecha. *Resultado esperado:* el sistema no crea el evento.
 
