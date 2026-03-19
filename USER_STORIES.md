@@ -489,6 +489,13 @@ Cuando el scheduler ejecuta el proceso de liberación
 Entonces todas las entradas quedan liberadas correctamente
 Y el proceso finaliza sin errores
 ```
+**CP-NF02. Tolerancia a fallos mediante reproceso**
+ 
+```gherkin
+Dado que el scheduler principal falla durante la liberación de reservas
+Cuando el job de respaldo se ejecuta en el siguiente ciclo
+Entonces las reservas que quedaron pendientes son procesadas correctamente
+```
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
