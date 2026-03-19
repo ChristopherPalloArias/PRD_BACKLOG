@@ -464,6 +464,13 @@ Dado que existe una reserva activa con 5 minutos de vigencia restante
 Cuando el simulador de pago retorna un resultado rechazado
 Entonces la entrada reservada vuelve a estar disponible en el inventario
 ```
+**CP-F03. Disponibilidad visible tras liberación**
+ 
+```gherkin
+Dado que una entrada fue liberada por expiración de reserva en el tier VIP
+Cuando otro comprador consulta la disponibilidad del evento
+Entonces el sistema muestra esa entrada nuevamente como disponible
+```
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
