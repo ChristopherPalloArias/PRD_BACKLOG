@@ -85,3 +85,17 @@
 - Persistir timestamps de reserva para control de expiración
 - Registrar logs de reserva, pago, confirmación y rechazo
 - Asegurar consistencia transaccional entre reserva, pago y compra
+
+---
+
+## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
+
+### DEV Funcional
+
+- Implementar detección de reservas vencidas
+- Liberar automáticamente entradas de reservas expiradas
+- Liberar automáticamente entradas de pagos rechazados
+- Actualizar estado de la reserva luego de la liberación
+- Reflejar nuevamente la entrada en disponibilidad
+- Implementar proceso de respaldo para reservas no liberadas por el mecanismo principal
+- Evitar liberación sobre compras ya confirmadas
