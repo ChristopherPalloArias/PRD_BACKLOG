@@ -431,7 +431,15 @@ Dado que una reserva se encuentra activa
 Cuando el sistema registra un pago rechazado
 Entonces la entrada reservada vuelve a estar disponible
 ```
-## HU-06: Notificaciones al comprador
+**CA-03. Disponibilidad actualizada luego de la liberación**
+ 
+```gherkin
+Escenario: Entrada visible nuevamente para otros compradores
+Dado que una entrada fue liberada por expiración o pago fallido
+Cuando otro comprador consulta la disponibilidad del evento
+Entonces el sistema refleja nuevamente esa entrada como disponible
+```
+## HU-06: otificaciones al comprador
 
 *Story Points: 3*
 
