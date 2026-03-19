@@ -1,9 +1,5 @@
   # Subtasks y Estimación — Sistema de Venta de Entradas
 > Escala de estimación: Fibonacci (1, 2, 3, 5, 8, 13)
->
-> Tasking en matriz de 4 cuadrantes por Historia de Usuario
->
-> Los Story Points de este archivo deben coincidir con USER_STORIES.md
 ---
 ## HU-01: Creación de evento de obra de teatro — SP: 5
 
@@ -16,6 +12,11 @@
 - [ ] Persistir evento en estado borrador
 - [ ] Restringir creación a usuarios con rol administrador
 ### QA
+- [ ] Diseñar matriz de datos válidos e inválidos para creación de eventos
+- [ ] Ejecutar prueba de creación exitosa con aforo permitido
+- [ ] Ejecutar prueba de rechazo por aforo superior al máximo
+- [ ] Ejecutar prueba de rechazo por información mínima incompleta
+- [ ] Verificar que el evento quede en estado borrador al crearse
 ---
 
 ## HU-02: Configuración de tiers y precios por evento — SP: 5
