@@ -650,3 +650,11 @@ Dado que el comprador A tiene un ticket confirmado
 Cuando el comprador B intenta consultar los tickets del comprador A
 Entonces el sistema no muestra los tickets de otro comprador
 ```
+**CP-NF02. Integridad entre ticket, compra y evento**
+ 
+```gherkin
+Dado que existe un ticket confirmado en el sistema
+Cuando se verifica su integridad
+Entonces el ticket está correctamente vinculado a una compra confirmada y a un evento existente
+Y no existen tickets huérfanos sin compra o evento asociado
+```
