@@ -250,6 +250,14 @@ Dado que un tier ya no tiene entradas disponibles
 Cuando el comprador consulta el detalle del evento
 Entonces el sistema lo muestra como no disponible
 ```
+**CA-03. Early Bird vencido**
+ 
+```gherkin
+Escenario: Early Bird fuera de vigencia
+Dado que la ventana de tiempo del tier Early Bird ya finalizó
+Cuando el comprador consulta el detalle del evento
+Entonces el sistema no lo presenta como opción disponible
+```
 ### Casos de Prueba Funcionales (CP-F)
 **CP-F01. Cartelera con eventos y tiers vigentes** 
 ```gherkin
