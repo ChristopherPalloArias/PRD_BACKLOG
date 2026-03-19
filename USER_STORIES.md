@@ -423,7 +423,14 @@ Dado que una reserva permanece sin pago exitoso
 Cuando se cumple el tiempo máximo de 10 minutos
 Entonces el sistema libera automáticamente la entrada asociada
 ```
-
+**CA-02. Liberación por pago rechazado**
+ 
+```gherkin
+Escenario: Entrada liberada tras rechazo de pago
+Dado que una reserva se encuentra activa
+Cuando el sistema registra un pago rechazado
+Entonces la entrada reservada vuelve a estar disponible
+```
 ## HU-06: Notificaciones al comprador
 
 *Story Points: 3*
