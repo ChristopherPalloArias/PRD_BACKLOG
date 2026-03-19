@@ -507,7 +507,7 @@ Y las entradas de compras confirmadas permanecen intactas
 ---
 ## HU-06: otificaciones al comprador
 
-*Story Points: 3*
+**Story Points: 3**
 
 ### Historia de Usuario
 
@@ -516,6 +516,17 @@ Como comprador
 Quiero recibir notificaciones inmediatas sobre el resultado de mi proceso de compra
 
 Para conocer oportunamente el estado de mi reserva o compra
+### Criterios de Aceptación (CA)
+ 
+**CA-01. Notificación de compra exitosa**
+ 
+```gherkin
+Escenario: Notificación de compra confirmada
+Dado que el comprador completa un pago exitoso
+Cuando el sistema confirma la compra
+Entonces el comprador recibe una notificación de compra confirmada
+```
+
 
 ## HU-07: Visualización de ticket confirmado
 
