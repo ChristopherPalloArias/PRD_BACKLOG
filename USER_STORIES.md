@@ -233,7 +233,14 @@ Quiero consultar los eventos disponibles y la disponibilidad por tier
 Para elegir una entrada según mis preferencias y presupuesto
 
 ### Criterios de Aceptación (CA)
-
+**CP-F01. Cartelera con eventos y tiers vigentes**
+ 
+```gherkin
+Dado que existen dos eventos publicados con entradas disponibles en todos sus tiers
+Cuando el comprador consulta la cartelera
+Entonces el sistema muestra ambos eventos
+Y presenta la disponibilidad vigente por tier para cada uno
+```
 
 ### Casos de Prueba Funcionales (CP-F)
 
