@@ -335,7 +335,13 @@ Cuando transcurren 10 minutos desde su creación
 Entonces el sistema expira la reserva
 ```
 **CA-04. Protección ante compra simultánea**
-
+```gherkin
+Escenario: Última entrada solicitada por dos compradores
+Dado que solo queda una entrada disponible en un tier
+Cuando dos compradores intentan completar la compra de forma concurrente
+Entonces el sistema confirma la compra para un solo comprador
+Y evita la duplicidad de venta
+```
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
