@@ -393,7 +393,15 @@ Cuando el sistema registra el inicio del temporizador
 Entonces la vigencia de 10 minutos se calcula con la hora del servidor
 Y no depende del reloj del dispositivo del comprador
 ```
+**CP-NF03. Integridad entre reserva, pago y compra**
 
+```gherkin
+Dado que se completa un flujo de reserva con pago exitoso
+Cuando el sistema confirma la compra
+Entonces el estado de la reserva, el pago y la compra son consistentes entre sí
+Y no existen registros contradictorios en base de datos
+```
+---
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
