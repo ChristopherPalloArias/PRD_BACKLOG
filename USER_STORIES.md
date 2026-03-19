@@ -629,3 +629,10 @@ Dado que el comprador completó una compra exitosa del tier General del evento "
 Cuando consulta sus tickets emitidos
 Entonces el sistema muestra el ticket confirmado asociado a esa compra
 ```
+**CP-F02. Ticket con información correcta**
+ 
+```gherkin
+Dado que existe un ticket confirmado para el evento "Bodas de Sangre", tier VIP, compra realizada el "2026-05-10"
+Cuando el comprador visualiza ese ticket
+Entonces el sistema muestra correctamente el nombre del evento, el tier adquirido y la fecha de compra
+```
