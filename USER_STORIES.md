@@ -89,7 +89,13 @@ Cuando registra un evento con aforo 201
 Entonces el sistema rechaza la operación
 Y el evento no queda persistido
 ```
-- *CP-F03:* Registrar un evento con nombre "Bodas de Sangre" y sala válida, omitiendo la fecha. *Resultado esperado:* el sistema no crea el evento.
+**CP-F03. Rechazo por fecha faltante**
+ 
+```gherkin
+Dado que el administrador tiene acceso al sistema
+Cuando registra un evento con nombre "Bodas de Sangre" y sala válida pero sin fecha
+Entonces el sistema no crea el evento
+```
 - *CP-F04:* Enviar el registro de un evento sin nombre ni fecha. *Resultado esperado:* el sistema no crea el evento.
 
 ### Casos de Prueba No Funcionales (CP-NF)
