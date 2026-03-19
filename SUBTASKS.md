@@ -41,7 +41,7 @@
 ---
 
 ## HU-03: Visualización de eventos y disponibilidad — SP: 3
-
+#### **Justificación SP:** Historia de consulta con menor complejidad técnica que las transaccionales, pero con reglas de negocio claras sobre visibilidad y disponibilidad.
 ### DEV
 
 - [ ] Implementar consulta de eventos publicados
