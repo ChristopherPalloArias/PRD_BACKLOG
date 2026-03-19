@@ -54,3 +54,11 @@
 - Excluir tiers agotados de la disponibilidad activa
 - Excluir Early Bird fuera de vigencia
 - Presentar disponibilidad vigente por tier
+
+### DEV No Funcional
+
+- Optimizar consultas de cartelera y disponibilidad
+- Manejar respuestas vacías y errores de consulta
+- Registrar métricas básicas de uso de la consulta
+
+---
