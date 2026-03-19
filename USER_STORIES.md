@@ -283,8 +283,13 @@ Cuando el comprador consulta el detalle del evento
 Entonces el sistema no presenta el tier Early Bird como opción de compra
 ```
 ### Casos de Prueba No Funcionales (CP-NF)
-
-
+**CP-NF01. Tiempo de respuesta bajo carga**
+ 
+```gherkin
+Dado que 50 compradores consultan la cartelera de forma simultánea
+Cuando el sistema procesa todas las solicitudes
+Entonces cada consulta obtiene respuesta en un tiempo aceptable
+```
 ## HU-04: Reserva y compra de entrada con pago simulado
 
 *Story Points: 8*
