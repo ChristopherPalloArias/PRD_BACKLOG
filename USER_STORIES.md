@@ -241,6 +241,14 @@ Cuando el comprador consulta la cartelera
 Entonces el sistema muestra ambos eventos
 Y presenta la disponibilidad vigente por tier para cada uno
 ```
+**CP-F02. Tier agotado no disponible**
+ 
+```gherkin
+Dado que el evento "Bodas de Sangre" tiene el tier General con 0 entradas disponibles
+Cuando el comprador consulta el detalle del evento
+Entonces el sistema muestra el tier General como no disponible
+Y los tiers VIP y Early Bird siguen mostrándose con su disponibilidad real
+```
 
 ### Casos de Prueba Funcionales (CP-F)
 
