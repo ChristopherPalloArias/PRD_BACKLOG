@@ -79,7 +79,6 @@
 - [ ] Ejecutar prueba de doble intento sobre la última entrada disponible
 - [ ] Verificar que una compra confirmada descuente inventario y genere ticket
 ---
-
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
 
 ### DEV
@@ -98,4 +97,14 @@
 - [ ] Verificar que la entrada liberada vuelva a aparecer disponible
 - [ ] Ejecutar prueba de regularización por proceso de respaldo
 - [ ] Verificar que una compra confirmada no sea liberada erróneamente
+---
+## HU-06: Notificaciones al comprador — SP: 3
+ 
+### DEV
+### QA
+
+
+## HU-07: Visualización de ticket confirmado — SP: 2
+### DEV
+### QA
 ---
