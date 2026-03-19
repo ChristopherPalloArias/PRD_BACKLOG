@@ -565,8 +565,6 @@ Dado que la reserva del comprador lleva 10 minutos sin pago exitoso
 Cuando el sistema libera la entrada automáticamente
 Entonces el comprador recibe una notificación informando que su reserva fue liberada
 ```
-<<<<<<< HEAD
-=======
 ### Casos de Prueba No Funcionales (CP-NF)
  
 **CP-NF01. Idempotencia para evitar notificaciones duplicadas**
@@ -642,4 +640,21 @@ Entonces el sistema muestra correctamente el nombre del evento, el tier adquirid
 Dado que una reserva del comprador expiró sin completar el pago
 Cuando el comprador consulta sus tickets
 Entonces el sistema no muestra ningún ticket asociado a esa operación
+```
+### Casos de Prueba No Funcionales (CP-NF)
+ 
+**CP-NF01. Control de acceso entre compradores**
+ 
+```gherkin
+Dado que el comprador A tiene un ticket confirmado
+Cuando el comprador B intenta consultar los tickets del comprador A
+Entonces el sistema no muestra los tickets de otro comprador
+```
+**CP-NF02. Integridad entre ticket, compra y evento**
+ 
+```gherkin
+Dado que existe un ticket confirmado en el sistema
+Cuando se verifica su integridad
+Entonces el ticket está correctamente vinculado a una compra confirmada y a un evento existente
+Y no existen tickets huérfanos sin compra o evento asociado
 ```
