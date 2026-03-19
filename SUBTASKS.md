@@ -2,7 +2,7 @@
 > Escala de estimación: Fibonacci (1, 2, 3, 5, 8, 13)
 ---
 ## HU-01: Creación de evento de obra de teatro — SP: 5
-
+#### **Justificación SP:** Historia de complejidad media. Requiere persistencia, validaciones de negocio, control por rol, manejo de estado inicial y cobertura de pruebas de camino feliz y límites.
 ### DEV
 
 - [ ] Crear entidad y tabla de eventos
