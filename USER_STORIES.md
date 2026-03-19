@@ -96,8 +96,13 @@ Dado que el administrador tiene acceso al sistema
 Cuando registra un evento con nombre "Bodas de Sangre" y sala válida pero sin fecha
 Entonces el sistema no crea el evento
 ```
-- *CP-F04:* Enviar el registro de un evento sin nombre ni fecha. *Resultado esperado:* el sistema no crea el evento.
-
+**CP-F04. Rechazo por múltiples campos faltantes**
+ 
+```gherkin
+Dado que el administrador tiene acceso al sistema
+Cuando registra un evento sin nombre y sin fecha
+Entonces el sistema no crea el evento
+```
 ### Casos de Prueba No Funcionales (CP-NF)
 
 - *CP-NF01:* Intentar crear un evento con aforo inválido y verificar que no queden registros parciales en base de datos.
