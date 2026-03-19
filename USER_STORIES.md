@@ -376,6 +376,15 @@ Cuando dos compradores intentan completar la compra de forma concurrente
 Entonces el sistema confirma la compra únicamente para uno de los dos compradores
 Y el segundo recibe un resultado de no disponibilidad
 ```
+### Casos de Prueba No Funcionales (CP-NF)
+**CP-NF01. Concurrencia sin duplicidad de venta**
+ 
+```gherkin
+Dado que 10 compradores intentan adquirir la última entrada disponible de forma simultánea
+Cuando el sistema procesa todas las solicitudes
+Entonces solo una compra queda confirmada
+Y no se genera duplicidad de venta
+```
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
