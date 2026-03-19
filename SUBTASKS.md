@@ -92,4 +92,10 @@
 - [ ] Implementar proceso de respaldo para reservas no liberadas por el mecanismo principal
 - [ ] Evitar liberación sobre compras ya confirmadas
 ### QA
+- [ ] Diseñar datos de prueba para reservas expiradas y pagos rechazados
+- [ ] Ejecutar prueba de liberación automática por expiración
+- [ ] Ejecutar prueba de liberación automática por pago rechazado
+- [ ] Verificar que la entrada liberada vuelva a aparecer disponible
+- [ ] Ejecutar prueba de regularización por proceso de respaldo
+- [ ] Verificar que una compra confirmada no sea liberada erróneamente
 ---
