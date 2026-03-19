@@ -104,8 +104,14 @@ Cuando registra un evento sin nombre y sin fecha
 Entonces el sistema no crea el evento
 ```
 ### Casos de Prueba No Funcionales (CP-NF)
-
-- *CP-NF01:* Intentar crear un evento con aforo inválido y verificar que no queden registros parciales en base de datos.
+ 
+**CP-NF01. Sin registros parciales ante operación rechazada**
+ 
+```gherkin
+Dado que el administrador intenta crear un evento con aforo inválido
+Cuando el sistema rechaza la operación
+Entonces no quedan registros parciales del evento en base de datos
+```
 - *CP-NF02:* Crear tres eventos consecutivos y verificar que cada operación queda registrada con usuario, fecha y resultado para trazabilidad administrativa.
 
 
