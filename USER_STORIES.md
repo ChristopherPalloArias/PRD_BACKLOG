@@ -581,6 +581,7 @@ Dado que se produce un evento relevante como compra confirmada, pago fallido o l
 Cuando el sistema procesa el resultado
 Entonces la notificación es emitida al comprador de forma inmediata
 ```
+---
 ## HU-07: Visualización de ticket confirmado
 
 **Story Points: 2**
@@ -658,3 +659,4 @@ Cuando se verifica su integridad
 Entonces el ticket está correctamente vinculado a una compra confirmada y a un evento existente
 Y no existen tickets huérfanos sin compra o evento asociado
 ```
+---
