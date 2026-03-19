@@ -242,7 +242,14 @@ Cuando el comprador consulta la cartelera
 Entonces el sistema muestra los eventos disponibles para compra
 Y presenta la disponibilidad vigente por tier
 ```
-
+**CA-02. Tier agotado**
+ 
+```gherkin
+Escenario: Tier agotado
+Dado que un tier ya no tiene entradas disponibles
+Cuando el comprador consulta el detalle del evento
+Entonces el sistema lo muestra como no disponible
+```
 ### Casos de Prueba Funcionales (CP-F)
 **CP-F01. Cartelera con eventos y tiers vigentes** 
 ```gherkin
