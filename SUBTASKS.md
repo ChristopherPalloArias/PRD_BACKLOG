@@ -1,5 +1,7 @@
   # Subtasks y Estimación — Sistema de Venta de Entradas
 
+---
+
 ## HU-01: Creación de evento de obra de teatro — SP: 5
 
 ### DEV Funcional
@@ -17,6 +19,8 @@
 - Registrar logs básicos de creación de eventos
 - Manejar errores de validación sin exponer detalles sensibles
 - Asegurar consistencia transaccional para evitar registros parciales
+
+---
 
 ## HU-02: Configuración de tiers y precios por evento — SP: 5
 
@@ -38,3 +42,15 @@
 - Manejar errores de configuración de forma consistente
 - Validar consistencia de fechas para la vigencia de Early Bird
 
+---
+
+## HU-03: Visualización de eventos y disponibilidad — SP: 3
+
+### DEV Funcional
+
+- Implementar consulta de eventos publicados
+- Implementar consulta de disponibilidad por tier
+- Filtrar eventos no publicados
+- Excluir tiers agotados de la disponibilidad activa
+- Excluir Early Bird fuera de vigencia
+- Presentar disponibilidad vigente por tier
