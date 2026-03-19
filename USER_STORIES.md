@@ -311,6 +311,14 @@ Quiero reservar una entrada y completar un pago simulado dentro de un tiempo lí
 Para asegurar mi acceso al evento sin perder disponibilidad durante el proceso
 ### Criterios de Aceptación (CA)
 **CA-01. Compra exitosa dentro del tiempo permitido**
+```gherkin
+Escenario: Compra confirmada dentro del tiempo de reserva
+Dado que existe disponibilidad para el tier seleccionado
+Cuando el comprador genera una reserva
+Y completa un pago exitoso antes de que transcurran 10 minutos
+Entonces el sistema confirma la compra
+Y descuenta la entrada del inventario disponible
+```
 **CA-02. Compra fallida por pago rechazado**
 **CA-03. Expiración de la reserva**
 **CA-04. Protección ante compra simultánea**
