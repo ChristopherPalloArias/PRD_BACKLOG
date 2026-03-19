@@ -583,10 +583,9 @@ Dado que se produce un evento relevante como compra confirmada, pago fallido o l
 Cuando el sistema procesa el resultado
 Entonces la notificación es emitida al comprador de forma inmediata
 ```
->>>>>>> cc90de4ea1dc9d9d4736a96bea3a143ffcbc94f3
 ## HU-07: Visualización de ticket confirmado
 
-*Story Points: 2*
+**Story Points: 2**
 
 ### Historia de Usuario
 
@@ -595,3 +594,13 @@ Como comprador
 Quiero visualizar el ticket confirmado de mi compra
 
 Para disponer de la evidencia de acceso al evento adquirido
+### Criterios de Aceptación (CA)
+ 
+**CA-01. Ticket disponible tras compra exitosa**
+ 
+```gherkin
+Escenario: Ticket visible después de una compra confirmada
+Dado que el comprador completó una compra exitosa
+Cuando consulta sus tickets emitidos
+Entonces el sistema muestra el ticket confirmado de la compra
+```
