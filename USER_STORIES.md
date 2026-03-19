@@ -496,6 +496,15 @@ Dado que el scheduler principal falla durante la liberación de reservas
 Cuando el job de respaldo se ejecuta en el siguiente ciclo
 Entonces las reservas que quedaron pendientes son procesadas correctamente
 ```
+**CP-NF03. El proceso no libera entradas de compras confirmadas**
+ 
+```gherkin
+Dado que existen reservas vencidas y compras ya confirmadas en el mismo evento
+Cuando el scheduler ejecuta el proceso de liberación
+Entonces solo se liberan las entradas de reservas vencidas
+Y las entradas de compras confirmadas permanecen intactas
+```
+---
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
