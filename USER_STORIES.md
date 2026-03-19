@@ -121,7 +121,6 @@ Cuando cada operación se completa
 Entonces cada una queda registrada con usuario, fecha y resultado
 ```
 ---
-
 ## HU-02: Configuración de tiers y precios por evento
 
 **Story Points: 5**
@@ -219,10 +218,11 @@ Dado que el precio de un tier se actualiza dos veces consecutivas
 Cuando ambas operaciones se completan
 Entonces el sistema conserva únicamente el último valor registrado
 ```
+---
 
 ## HU-03: Visualización de eventos y disponibilidad
 
-*Story Points: 3*
+**Story Points: 3**
 
 ### Historia de Usuario
 
@@ -231,6 +231,14 @@ Como comprador
 Quiero consultar los eventos disponibles y la disponibilidad por tier
 
 Para elegir una entrada según mis preferencias y presupuesto
+
+### Criterios de Aceptación (CA)
+
+
+### Casos de Prueba Funcionales (CP-F)
+
+
+### Casos de Prueba No Funcionales (CP-NF)
 
 
 ## HU-04: Reserva y compra de entrada con pago simulado
