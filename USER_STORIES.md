@@ -471,6 +471,14 @@ Dado que una entrada fue liberada por expiración de reserva en el tier VIP
 Cuando otro comprador consulta la disponibilidad del evento
 Entonces el sistema muestra esa entrada nuevamente como disponible
 ```
+**CP-F04. Regularización por proceso de respaldo**
+ 
+```gherkin
+Dado que existe una reserva vencida que el scheduler principal no procesó
+Cuando se ejecuta el job de respaldo
+Entonces el sistema detecta la reserva pendiente
+Y libera la entrada correspondiente
+```
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
