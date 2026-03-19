@@ -1,7 +1,10 @@
   # Subtasks y Estimación — Sistema de Venta de Entradas
-
+> Escala de estimación: Fibonacci (1, 2, 3, 5, 8, 13)
+>
+> Tasking en matriz de 4 cuadrantes por Historia de Usuario
+>
+> Los Story Points de este archivo deben coincidir con USER_STORIES.md
 ---
-
 ## HU-01: Creación de evento de obra de teatro — SP: 5
 
 ### DEV
@@ -12,6 +15,7 @@
 - Validar aforo contra el máximo permitido de la sala
 - Persistir evento en estado borrador
 - Restringir creación a usuarios con rol administrador
+### QA
 ---
 
 ## HU-02: Configuración de tiers y precios por evento — SP: 5
@@ -26,6 +30,7 @@
 - Validar que la suma de cupos no supere el aforo del evento
 - Implementar vigencia temporal del tier Early Bird
 - Permitir guardar configuración comercial del evento en borrador
+### QA
 ---
 
 ## HU-03: Visualización de eventos y disponibilidad — SP: 3
@@ -38,6 +43,7 @@
 - Excluir tiers agotados de la disponibilidad activa
 - Excluir Early Bird fuera de vigencia
 - Presentar disponibilidad vigente por tier
+### QA
 ---
 
 ## HU-04: Reserva y compra de entrada con pago simulado — SP: 8
@@ -53,6 +59,7 @@
 - Evitar confirmación de compras sobre reservas vencidas
 - Asociar compra confirmada con ticket emitido
 - Manejar rechazo de pago sin confirmar la entrada
+### QA
 ---
 
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
@@ -66,3 +73,5 @@
 - Reflejar nuevamente la entrada en disponibilidad
 - Implementar proceso de respaldo para reservas no liberadas por el mecanismo principal
 - Evitar liberación sobre compras ya confirmadas
+### QA
+---
