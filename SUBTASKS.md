@@ -16,7 +16,7 @@
 
 ## HU-02: Configuración de tiers y precios por evento — SP: 5
 
-### DEV Funcional
+### DEV
 
 - Crear entidad y tabla de tiers asociada al evento
 - Implementar endpoint o servicio de configuración comercial
@@ -26,14 +26,6 @@
 - Validar que la suma de cupos no supere el aforo del evento
 - Implementar vigencia temporal del tier Early Bird
 - Permitir guardar configuración comercial del evento en borrador
-
-### DEV No Funcional
-
-- Asegurar integridad referencial entre evento y tiers
-- Registrar logs de cambios en configuración de tiers y precios
-- Manejar errores de configuración de forma consistente
-- Validar consistencia de fechas para la vigencia de Early Bird
-
 ---
 
 ## HU-03: Visualización de eventos y disponibilidad — SP: 3
