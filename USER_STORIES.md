@@ -328,6 +328,12 @@ Entonces la compra se marca como fallida
 Y la entrada no queda confirmada para el comprador
 ```
 **CA-03. Expiración de la reserva**
+```gherkin
+Escenario: Reserva expirada por tiempo
+Dado que existe una reserva activa sin pago exitoso
+Cuando transcurren 10 minutos desde su creación
+Entonces el sistema expira la reserva
+```
 **CA-04. Protección ante compra simultánea**
 
 ## HU-05: Liberación automática por fallo de pago o expiración
