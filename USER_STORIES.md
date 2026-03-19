@@ -360,6 +360,14 @@ Cuando el simulador de pago retorna un resultado rechazado
 Entonces la compra queda marcada como fallida
 Y la entrada no queda confirmada para el comprador
 ```
+**CP-F03. Reserva expirada por tiempo**
+ 
+```gherkin
+Dado que existe una reserva activa sin pago exitoso
+Cuando transcurren 10 minutos desde su creación sin que se complete el pago
+Entonces el sistema expira la reserva
+Y la entrada vuelve a estar disponible en el inventario
+```
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
