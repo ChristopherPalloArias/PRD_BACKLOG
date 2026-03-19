@@ -439,6 +439,13 @@ Dado que una entrada fue liberada por expiración o pago fallido
 Cuando otro comprador consulta la disponibilidad del evento
 Entonces el sistema refleja nuevamente esa entrada como disponible
 ```
+```gherkin
+Escenario: Recuperación ante falla del mecanismo principal
+Dado que existe una reserva vencida que no fue liberada por el proceso principal
+Cuando se ejecuta un proceso de verificación de respaldo
+Entonces el sistema regulariza el estado de la reserva
+Y libera la entrada correspondiente
+```
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
