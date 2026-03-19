@@ -604,3 +604,11 @@ Dado que el comprador completó una compra exitosa
 Cuando consulta sus tickets emitidos
 Entonces el sistema muestra el ticket confirmado de la compra
 ```
+**CA-02. Ticket con información correcta**
+ 
+```gherkin
+Escenario: Datos correctos en el ticket
+Dado que existe un ticket confirmado asociado a una compra exitosa
+Cuando el comprador lo visualiza
+Entonces el sistema muestra correctamente la información del evento, el tier adquirido y la compra realizada
+```
