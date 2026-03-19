@@ -558,6 +558,13 @@ Dado que el comprador tiene una reserva activa con 7 minutos de vigencia
 Cuando el simulador de pago retorna un resultado rechazado
 Entonces el sistema emite una notificación de pago fallido al comprador
 ```
+**CP-F03. Notificación de liberación por expiración**
+ 
+```gherkin
+Dado que la reserva del comprador lleva 10 minutos sin pago exitoso
+Cuando el sistema libera la entrada automáticamente
+Entonces el comprador recibe una notificación informando que su reserva fue liberada
+```
 ## HU-07: Visualización de ticket confirmado
 
 *Story Points: 2*
