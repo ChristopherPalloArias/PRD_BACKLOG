@@ -574,7 +574,13 @@ Dado que el sistema intenta emitir una notificación de compra confirmada
 Cuando la operación se ejecuta dos veces por reintento de red
 Entonces el comprador recibe la notificación una única vez
 ```
-
+**CP-NF02. Emisión inmediata de notificaciones**
+ 
+```gherkin
+Dado que se produce un evento relevante como compra confirmada, pago fallido o liberación
+Cuando el sistema procesa el resultado
+Entonces la notificación es emitida al comprador de forma inmediata
+```
 ## HU-07: Visualización de ticket confirmado
 
 *Story Points: 2*
