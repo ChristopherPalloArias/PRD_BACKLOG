@@ -342,6 +342,16 @@ Cuando dos compradores intentan completar la compra de forma concurrente
 Entonces el sistema confirma la compra para un solo comprador
 Y evita la duplicidad de venta
 ```
+### Casos de Prueba Funcionales (CP-F)
+**CP-F01. Compra confirmada dentro del tiempo límite**
+ 
+```gherkin
+Dado que el tier General del evento "Bodas de Sangre" tiene 10 entradas disponibles
+Cuando el comprador genera una reserva
+Y completa un pago exitoso a los 4 minutos de haberla creado
+Entonces el sistema confirma la compra
+Y el inventario del tier General pasa a 9 entradas disponibles
+```
 ## HU-05: Liberación automática por fallo de pago o expiración
 
 *Story Points: 8*
