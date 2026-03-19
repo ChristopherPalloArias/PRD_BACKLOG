@@ -12,14 +12,6 @@
 - Validar aforo contra el máximo permitido de la sala
 - Persistir evento en estado borrador
 - Restringir creación a usuarios con rol administrador
-
-### DEV No Funcional
-
-- Implementar validaciones de integridad de entrada en backend
-- Registrar logs básicos de creación de eventos
-- Manejar errores de validación sin exponer detalles sensibles
-- Asegurar consistencia transaccional para evitar registros parciales
-
 ---
 
 ## HU-02: Configuración de tiers y precios por evento — SP: 5
