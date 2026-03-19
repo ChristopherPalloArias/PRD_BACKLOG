@@ -71,8 +71,16 @@ Entonces el sistema no crea el evento
 ```
 
 ### Casos de Prueba Funcionales (CP-F)
+ 
+**CP-F01. Creación exitosa con datos completos**
+ 
+```gherkin
+Dado que el administrador tiene acceso al sistema
+Y existe una sala con aforo máximo de 300
+Cuando registra un evento con nombre "Bodas de Sangre", fecha "2026-05-10" y aforo 250
+Entonces el sistema crea el evento en estado borrador con aforo 250
+```
 
-- *CP-F01:* Registrar un evento con nombre "Bodas de Sangre", fecha "2026-05-10", sala con aforo máximo 300 y aforo configurado en 250. *Resultado esperado:* el sistema crea el evento en estado borrador con aforo 250.
 - *CP-F02:* Registrar un evento en una sala con aforo máximo 200, intentando configurar un aforo de 201. *Resultado esperado:* el sistema rechaza la operación y no persiste el evento.
 - *CP-F03:* Registrar un evento con nombre "Bodas de Sangre" y sala válida, omitiendo la fecha. *Resultado esperado:* el sistema no crea el evento.
 - *CP-F04:* Enviar el registro de un evento sin nombre ni fecha. *Resultado esperado:* el sistema no crea el evento.
