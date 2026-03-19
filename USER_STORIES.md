@@ -404,7 +404,7 @@ Y no existen registros contradictorios en base de datos
 ---
 ## HU-05: Liberación automática por fallo de pago o expiración
 
-*Story Points: 8*
+**Story Points: 8**
 
 ### Historia de Usuario
 
@@ -413,6 +413,16 @@ Como sistema
 Quiero liberar automáticamente las entradas reservadas que no se concretan
 
 Para mantener disponibilidad real y evitar bloqueo innecesario de inventario
+### Criterios de Aceptación (CA)
+ 
+**CA-01. Liberación por expiración de reserva**
+ 
+```gherkin
+Escenario: Entrada liberada al vencerse la reserva
+Dado que una reserva permanece sin pago exitoso
+Cuando se cumple el tiempo máximo de 10 minutos
+Entonces el sistema libera automáticamente la entrada asociada
+```
 
 ## HU-06: Notificaciones al comprador
 
