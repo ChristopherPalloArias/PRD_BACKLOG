@@ -505,7 +505,7 @@ Entonces solo se liberan las entradas de reservas vencidas
 Y las entradas de compras confirmadas permanecen intactas
 ```
 ---
-## HU-06: otificaciones al comprador
+## HU-06: Notificaciones al comprador
 
 **Story Points: 3**
 
