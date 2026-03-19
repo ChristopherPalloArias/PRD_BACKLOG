@@ -479,6 +479,16 @@ Cuando se ejecuta el job de respaldo
 Entonces el sistema detecta la reserva pendiente
 Y libera la entrada correspondiente
 ```
+### Casos de Prueba No Funcionales (CP-NF)
+ 
+**CP-NF01. Estabilidad del scheduler ante múltiples reservas vencidas**
+ 
+```gherkin
+Dado que existen 20 reservas vencidas simultáneamente
+Cuando el scheduler ejecuta el proceso de liberación
+Entonces todas las entradas quedan liberadas correctamente
+Y el proceso finaliza sin errores
+```
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
