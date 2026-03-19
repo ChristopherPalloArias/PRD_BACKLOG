@@ -20,7 +20,7 @@
 ---
 
 ## HU-02: Configuración de tiers y precios por evento — SP: 5
-
+#### **Justificación SP:** Complejidad media. Agrega reglas cruzadas entre precios, cupos, aforo y vigencia temporal, por lo que requiere mayor cobertura funcional y de consistencia.
 ### DEV
 
 - [ ] Crear entidad y tabla de tiers asociada al evento
