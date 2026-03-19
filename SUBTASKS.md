@@ -17,3 +17,16 @@
 - [ ] Registrar logs básicos de creación de eventos
 - [ ] Manejar errores de validación sin exponer detalles sensibles
 - [ ] Asegurar consistencia transaccional para evitar registros parciales
+
+## HU-02: Configuración de tiers y precios por evento — SP: 5
+
+### DEV Funcional
+
+- [ ] Crear entidad y tabla de tiers asociada al evento
+- [ ] Implementar endpoint o servicio de configuración comercial
+- [ ] Validar tipos permitidos de tier: VIP, General y Early Bird
+- [ ] Validar precios mayores a cero
+- [ ] Validar cupos asignados por tier
+- [ ] Validar que la suma de cupos no supere el aforo del evento
+- [ ] Implementar vigencia temporal del tier Early Bird
+- [ ] Permitir guardar configuración comercial del evento en borrador
