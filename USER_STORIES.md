@@ -457,7 +457,13 @@ Cuando el scheduler ejecuta la verificación de reservas vencidas
 Entonces la entrada queda liberada automáticamente
 Y el inventario del tier General aumenta en una unidad
 ```
-
+**CP-F02. Liberación por pago rechazado**
+ 
+```gherkin
+Dado que existe una reserva activa con 5 minutos de vigencia restante
+Cuando el simulador de pago retorna un resultado rechazado
+Entonces la entrada reservada vuelve a estar disponible en el inventario
+```
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
