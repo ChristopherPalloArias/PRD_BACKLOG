@@ -446,6 +446,18 @@ Cuando se ejecuta un proceso de verificación de respaldo
 Entonces el sistema regulariza el estado de la reserva
 Y libera la entrada correspondiente
 ```
+### Casos de Prueba Funcionales (CP-F)
+ 
+**CP-F01. Liberación automática por expiración**
+ 
+```gherkin
+Dado que existe una reserva activa sobre el tier General del evento "Bodas de Sangre"
+Y han transcurrido 10 minutos sin que se complete el pago
+Cuando el scheduler ejecuta la verificación de reservas vencidas
+Entonces la entrada queda liberada automáticamente
+Y el inventario del tier General aumenta en una unidad
+```
+
 ## HU-06: otificaciones al comprador
 
 *Story Points: 3*
