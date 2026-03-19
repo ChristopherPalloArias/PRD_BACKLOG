@@ -57,7 +57,7 @@
 
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
 
-### DEV Funcional
+### DEV
 
 - Implementar detección de reservas vencidas
 - Liberar automáticamente entradas de reservas expiradas
@@ -66,11 +66,3 @@
 - Reflejar nuevamente la entrada en disponibilidad
 - Implementar proceso de respaldo para reservas no liberadas por el mecanismo principal
 - Evitar liberación sobre compras ya confirmadas
-
-### DEV No Funcional
-
-- Programar scheduler o job periódico de verificación
-- Registrar logs de liberación automática y reproceso
-- Manejar fallos silenciosos del proceso principal
-- Asegurar idempotencia básica del reproceso
-- Proteger consistencia del inventario ante ejecuciones repetidas
