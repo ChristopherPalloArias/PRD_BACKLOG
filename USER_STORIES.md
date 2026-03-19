@@ -620,3 +620,12 @@ Dado que una reserva no finalizó con pago exitoso
 Cuando el comprador consulta sus tickets
 Entonces el sistema no genera ni muestra un ticket asociado a esa operación
 ```
+## Casos de Prueba Funcionales (CP-F)
+ 
+**CP-F01. Ticket visible tras compra exitosa**
+ 
+```gherkin
+Dado que el comprador completó una compra exitosa del tier General del evento "Bodas de Sangre"
+Cuando consulta sus tickets emitidos
+Entonces el sistema muestra el ticket confirmado asociado a esa compra
+```
