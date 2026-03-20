@@ -80,9 +80,8 @@
 - [ ] Verificar que una compra confirmada descuente inventario y genere ticket
 ---
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
-
-### DEV
 #### **Justificación SP:** Alta complejidad por automatización, asincronía, procesos de respaldo y necesidad de preservar la integridad del inventario en todo momento.
+### DEV
 - [ ] Implementar detección de reservas vencidas
 - [ ] Liberar automáticamente entradas de reservas expiradas
 - [ ] Liberar automáticamente entradas de pagos rechazados
@@ -99,7 +98,6 @@
 - [ ] Verificar que una compra confirmada no sea liberada erróneamente
 ---
 ## HU-06: Notificaciones al comprador — SP: 3
- 
 ### DEV
 - [ ] Implementar servicio simulado de notificaciones
 - [ ] Enviar notificación al confirmar compra
@@ -108,7 +106,7 @@
 - [ ] Asociar el motivo correcto a cada notificación emitida
 ### QA
 
-
+---
 ## HU-07: Visualización de ticket confirmado — SP: 2
 ### DEV
 - [ ] Implementar consulta de ticket confirmado por compra
@@ -116,4 +114,5 @@
 - [ ] Permitir visualización solo para compras confirmadas
 - [ ] Restringir acceso al ticket al comprador propietario
 ### QA
+
 ---
