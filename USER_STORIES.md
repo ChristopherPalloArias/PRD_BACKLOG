@@ -235,13 +235,13 @@ Dado que una entrada fue liberada por expiración o pago fallido
 Cuando otro comprador consulta la disponibilidad del evento 
 Entonces el sistema refleja nuevamente esa entrada como disponible
 ```
-**CA-04. Recuperación ante falla del mecanismo principal**
+**CA-04. Liberación de una reserva vencida pendiente**
 ```gherkin
-Escenario: Recuperación ante falla del mecanismo principal
-Dado que existe una reserva vencida que no fue liberada por el proceso principal
-Cuando se ejecuta un proceso de verificación de respaldo
-Entonces el sistema regulariza el estado de la reserva
-Y libera la entrada correspondiente
+Escenario: Liberación de una reserva vencida pendiente
+Dado que existe una reserva vencida que aún mantiene una entrada bloqueada
+Cuando el sistema revisa las reservas pendientes
+Entonces el sistema libera la entrada correspondiente
+Y actualiza el estado de la reserva
 ```
 ---
 ## HU-06: Notificaciones al comprador
