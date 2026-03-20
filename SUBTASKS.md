@@ -80,7 +80,7 @@
 - [ ] Verificar que una compra confirmada descuente inventario y genere ticket
 ---
 ## HU-05: Liberación automática por fallo de pago o expiración — SP: 8
-#### **Justificación SP:** Alta complejidad por automatización, asincronía, procesos de respaldo y necesidad de preservar la integridad del inventario en todo momento.
+#### **Justificación SP:** Historia de alta complejidad. El sistema debe ser capaz de actuar solo, en segundo plano y sin margen de error, garantizando que ninguna entrada quede bloqueada ni se libere por equivocación.
 ### DEV
 - [ ] Implementar detección de reservas vencidas
 - [ ] Liberar automáticamente entradas de reservas expiradas
