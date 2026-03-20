@@ -13,6 +13,11 @@ disponibilidad real en todo momento.
 ## Story Map
 > [Ver en FigJam](https://www.figma.com/board/BIthdjee35TGVFThd2Qqff/Story-Map-%E2%80%94-Sistema-de-Venta-de-Entradas--Ticketing-?node-id=0-1&t=MNZ1TjxddfBPOwVN-1)
 
+> Este FigJam incluye:
+> - **El flujo del MVP**, para visualizar la interacción principal de organizador y comprador.
+> - **El Story Map**, como primer borrador visual para ordenar actividades, tareas e historias de usuario antes de consolidar el backlog final.
+> - **La sesión de Planning Poker**, como evidencia del proceso colaborativo de estimación en Story Points.
+
 ## Estructura de nuestro repositorio
 - `PRD.md`
 - `USER_STORIES.md`
