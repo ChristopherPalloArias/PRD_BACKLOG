@@ -127,11 +127,11 @@ Quiero consultar los eventos disponibles y la disponibilidad por tier
 Para elegir una entrada según mis preferencias y presupuesto
 
 ### Criterios de Aceptación (CA)
-**CA-01. Consulta de eventos publicados**
+**CA-01. Consulta de eventos disponibles**
  
 ```gherkin
 Escenario: Visualización de eventos disponibles
-Dado que existen eventos publicados con entradas disponibles
+Dado que existen eventos con entradas disponibles
 Cuando el comprador consulta la cartelera
 Entonces el sistema muestra los eventos disponibles para compra
 Y presenta la disponibilidad vigente por tier
