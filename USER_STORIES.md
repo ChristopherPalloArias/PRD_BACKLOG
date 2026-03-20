@@ -83,7 +83,7 @@ Para ofrecer una estructura de venta alineada con la estrategia comercial del ev
 **CA-01. Configuración válida de tiers**
 ```gherkin
 Escenario: Configuración comercial exitosa
-Dado que existe un evento en estado borrador
+Dado que existe un evento registrado en el sistema
 Cuando el administrador define los tiers VIP, General y Early Bird
 Y asigna cupos y precios válidos a cada tier
 Entonces el sistema guarda la configuración comercial del evento
