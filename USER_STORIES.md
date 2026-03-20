@@ -204,11 +204,11 @@ Y evita la duplicidad de venta
 
 ### Historia de Usuario
 
-Como sistema
+Como administrador del sistema
 
-Quiero liberar automáticamente las entradas reservadas que no se concretan
+Quiero que las entradas reservadas se liberen automáticamente cuando el pago falla o expira
 
-Para mantener disponibilidad real y evitar bloqueo innecesario de inventario
+Para garantizar disponibilidad real y evitar bloqueo innecesario de inventario
 ### Criterios de Aceptación (CA)
  
 **CA-01. Liberación por expiración de reserva**
