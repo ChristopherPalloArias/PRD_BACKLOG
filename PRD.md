@@ -1,6 +1,6 @@
-  # PRD — Sistema de Venta de Entradas para Obras de Teatro
+# PRD — Sistema de Venta de Entradas para Obras de Teatro
   
-  ## 1. Visión y Objetivos
+## 1. Visión y Objetivos
 
 ### 1.1 Problema que resuelve
 
