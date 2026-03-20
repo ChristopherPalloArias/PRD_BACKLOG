@@ -11,7 +11,7 @@ disponibilidad real en todo momento.
 - Luis Alfredo Pinzón Quintero — DEV
 
 ## Story Map
-
+> [Ver en FigJam](https://www.figma.com/board/BIthdjee35TGVFThd2Qqff/Story-Map-%E2%80%94-Sistema-de-Venta-de-Entradas--Ticketing-?node-id=0-1&t=MNZ1TjxddfBPOwVN-1)
 
 ## Estructura de nuestro repositorio
 - `PRD.md`
