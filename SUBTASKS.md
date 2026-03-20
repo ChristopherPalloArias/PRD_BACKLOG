@@ -2,7 +2,7 @@
 > Escala de estimación: Fibonacci (1, 2, 3, 5, 8, 13)
 ---
 ## HU-01: Creación de evento de obra de teatro — SP: 5
-#### **Justificación SP:** Historia de complejidad media. Requiere persistencia, validaciones de negocio, control por roly cobertura de pruebas de camino feliz y límites.
+#### **Justificación SP:** Historia de complejidad media. Requiere persistencia, validaciones de negocio, control por rol y cobertura de pruebas de camino feliz y límites.
 ### DEV
 
 - [ ] Crear entidad y tabla de eventos
@@ -44,15 +44,15 @@
 #### **Justificación SP:** Historia de consulta con menor complejidad técnica que las transaccionales, pero con reglas de negocio claras sobre visibilidad y disponibilidad.
 ### DEV
 
-- [ ] Implementar consulta de eventos publicados
+- [ ] Implementar consulta de eventos disponibles
 - [ ] Implementar consulta de disponibilidad por tier
-- [ ] Filtrar eventos no publicados
+- [ ] Filtrar eventos sin entradas disponibles
 - [ ] Excluir tiers agotados de la disponibilidad activa
 - [ ] Excluir Early Bird fuera de vigencia
 - [ ] Presentar disponibilidad vigente por tier
 ### QA
-- [ ] Diseñar datos de prueba para eventos publicados y no publicados
-- [ ] Validar visualización de eventos publicados con entradas disponibles
+- [ ] Diseñar datos de prueba para eventos con y sin entradas disponibles
+- [ ] Validar visualización de eventos con entradas disponibles
 - [ ] Validar que un tier agotado aparezca como no disponible
 - [ ] Validar que Early Bird vencido no se muestre como opción disponible
 - [ ] Verificar que solo se muestre disponibilidad vigente por tier
