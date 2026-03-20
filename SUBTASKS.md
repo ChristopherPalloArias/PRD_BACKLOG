@@ -113,6 +113,7 @@
 - [ ] Verificar correspondencia entre evento del sistema y mensaje emitido
 ---
 ## HU-07: Visualización de ticket confirmado — SP: 2
+**Justificación SP:** Historia pequeña de consulta, pero con control de acceso e integridad de datos como aspectos críticos.
 ### DEV
 - [ ] Implementar consulta de ticket confirmado por compra
 - [ ] Mostrar datos del evento, tier y compra
