@@ -128,14 +128,13 @@ El MVP se considerará exitoso si permite:
 
 ## 6. Glosario de términos
 
-- **Aforo:** cantidad máxima de asistentes permitidos en una sala o evento.
-- **Tier:** categoría de entrada disponible para un evento. Este sistema maneja tres: VIP, General y Early Bird.
-- **Early Bird:** tier promocional disponible solo durante una ventana de tiempo definida por el administrador.
-- **Reserva:** bloqueo temporal de una entrada mientras el comprador completa el pago. Tiene una vigencia máxima de 10 minutos.
-- **Timeout:** vencimiento automático de la reserva cuando el comprador no completa el pago dentro del plazo establecido.
-- **Timer:** temporizador visible para el comprador que indica el tiempo restante de su reserva. Su referencia real es siempre el servidor.
-- **Timestamp:** marca de tiempo que registra el momento exacto en que ocurre un evento dentro del sistema, como el inicio o vencimiento de una reserva.
-- **Scheduler:** proceso automático que corre en segundo plano y se encarga de desactivar tiers vencidos y liberar reservas expiradas sin intervención manual.
+- **Aforo:** Es la cantidad máxima de asistentes permitidos en una sala.
+- **Tier:** Es la categoría de entrada disponible para un evento.
+- **Early Bird:** Es una categoría de entradas que tienen un precio especial para compradores que adquieren su entrada antes que el resto, disponible solo durante una ventana de tiempo definida por el organizador.
+- **Timeout:** Es el vencimiento automático de la reserva cuando el comprador no completa el pago dentro del plazo establecido.
+- **Timer:** Es el temporizador visible para el comprador que indica el tiempo restante de su reserva. Su referencia real es siempre el servidor.
+- **Timestamp:** Es la marca de tiempo que registra el momento exacto en que ocurre un evento dentro del sistema, como el inicio o vencimiento de una reserva.
+- **Scheduler:** Es el proceso automático que corre en segundo plano y se encarga de desactivar tiers vencidos y liberar reservas expiradas sin intervención manual.
 - **Job de respaldo:** proceso secundario que entra en acción si el scheduler falla, garantizando que ninguna reserva quede bloqueada indefinidamente.
 - **Bloqueo optimista:** mecanismo que permite que varias transacciones avancen en paralelo, pero solo confirma la que llega primero al momento de escribir, evitando duplicidad de entradas.
 - **Idempotencia:** propiedad de una operación que garantiza el mismo resultado aunque se ejecute múltiples veces. Se aplica para evitar notificaciones duplicadas.
