@@ -1,10 +1,5 @@
   # User Stories — Sistema de Venta de Entradas
-> Escala de estimación: Fibonacci (1, 2, 3, 5, 8, 13)
-> 
-> Formato obligatorio: Como [rol] / Quiero [acción] / Para [beneficio]
-> 
-> Criterios de Aceptación: Gherkin declarativo, centrado en comportamiento de negocio
-> 
+> Escala de estimación: Fibonacci (1, 2, 3, 5, 8, 13) 
 
 ## Definition of Ready (DoR)
 
@@ -619,7 +614,7 @@ Dado que una reserva no finalizó con pago exitoso
 Cuando el comprador consulta sus tickets
 Entonces el sistema no genera ni muestra un ticket asociado a esa operación
 ```
-## Casos de Prueba Funcionales (CP-F)
+### Casos de Prueba Funcionales (CP-F)
  
 **CP-F01. Ticket visible tras compra exitosa**
  
