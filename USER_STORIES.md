@@ -92,7 +92,7 @@ Entonces el sistema guarda la configuración comercial del evento
  
 ```gherkin
 Escenario: Early Bird con vigencia válida
-Dado que existe un evento en estado borrador
+Dado que existe un evento registrado en el sistema
 Cuando el administrador define una ventana de tiempo válida para el tier Early Bird
 Entonces el sistema habilita ese tier únicamente dentro del período configurado
 ```
@@ -100,7 +100,7 @@ Entonces el sistema habilita ese tier únicamente dentro del período configurad
  
 ```gherkin
 Escenario: Precio no válido en un tier
-Dado que existe un evento en estado borrador
+Dado que existe un evento registrado en el sistema
 Cuando el administrador asigna a un tier un precio igual o menor a cero
 Entonces el sistema rechaza la configuración
 ```
