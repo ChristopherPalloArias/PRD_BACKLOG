@@ -30,7 +30,7 @@
 - [ ] Validar cupos asignados por tier
 - [ ] Validar que la suma de cupos no supere el aforo del evento
 - [ ] Implementar vigencia temporal del tier Early Bird
-- [ ] Permitir guardar configuración comercial del evento en borrador
+- [ ] Permitir guardar la configuración comercial del evento
 ### QA
 - [ ] Diseñar matriz de datos para combinaciones de tiers, precios y cupos
 - [ ] Validar configuración exitosa de VIP, General y Early Bird
