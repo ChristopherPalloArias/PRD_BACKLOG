@@ -98,7 +98,7 @@
 - [ ] Verificar que una compra confirmada no sea liberada erróneamente
 ---
 ## HU-06: Notificaciones al comprador — SP: 3
-#### **Justificación SP:** Tiene pocos flujos principales, pero depende de eventos del sistema y requiere control de duplicidad y trazabilidad.
+#### **Justificación SP:** Historia pequeña-media. Tiene pocos flujos principales, pero depende de eventos del sistema y requiere control de duplicidad y trazabilidad.
 ### DEV
 - [ ] Implementar servicio simulado de notificaciones
 - [ ] Enviar notificación al confirmar compra
