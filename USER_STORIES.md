@@ -46,7 +46,7 @@ Dado que el administrador tiene acceso previamente habilitado al sistema
 Y dispone de la información obligatoria del evento
 Cuando registra un evento con datos válidos
 Y define un aforo dentro del máximo permitido de la sala
-Entonces el sistema crea el evento en estado borrador
+Entonces el sistema crea el evento con la información ingresada
 ```
 **CA-02. Rechazo por aforo superior al máximo**
  
