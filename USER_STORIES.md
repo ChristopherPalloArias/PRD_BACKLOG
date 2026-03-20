@@ -204,11 +204,11 @@ Y evita la duplicidad de venta
 
 ### Historia de Usuario
 
-Como administrador del sistema
+Como organizador del evento
 
-Quiero que las entradas reservadas se liberen automáticamente cuando el pago falla o expira
+Quiero que las entradas bloqueadas por reservas vencidas o pagos fallidos se liberen automáticamente
 
-Para garantizar disponibilidad real y evitar bloqueo innecesario de inventario
+Para poder ofrecer nuevamente esos cupos a otros compradores
 ### Criterios de Aceptación (CA)
  
 **CA-01. Liberación por expiración de reserva**
@@ -232,7 +232,7 @@ Entonces la entrada reservada vuelve a estar disponible
 ```gherkin
 Escenario: Entrada visible nuevamente para otros compradores
 Dado que una entrada fue liberada por expiración o pago fallido
-Cuando otro comprador consulta la disponibilidad del evento
+Cuando otro comprador consulta la disponibilidad del evento 
 Entonces el sistema refleja nuevamente esa entrada como disponible
 ```
 **CA-04. Recuperación ante falla del mecanismo principal**
