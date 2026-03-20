@@ -105,7 +105,11 @@
 - [ ] Enviar notificación al liberar una reserva expirada
 - [ ] Asociar el motivo correcto a cada notificación emitida
 ### QA
-
+- [ ] Diseñar datos de prueba para eventos de notificación
+- [ ] Validar notificación por compra exitosa
+- [ ] Validar notificación por pago fallido
+- [ ] Validar notificación por liberación de reserva
+- [ ] Verificar correspondencia entre evento del sistema y mensaje emitido
 ---
 ## HU-07: Visualización de ticket confirmado — SP: 2
 ### DEV
