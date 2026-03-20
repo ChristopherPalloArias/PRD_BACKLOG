@@ -34,7 +34,7 @@ Como administrador
 
 Quiero crear un evento de obra de teatro con su información base y aforo permitido
 
-Para prepararlo para su configuración comercial y posterior publicación
+Para prepararlo para su configuración comercial y disponibilidad en el sistema
 
 ### Criterios de Aceptación (CA)
  
