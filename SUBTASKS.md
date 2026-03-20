@@ -119,5 +119,9 @@
 - [ ] Permitir visualización solo para compras confirmadas
 - [ ] Restringir acceso al ticket al comprador propietario
 ### QA
-
+- [ ] Diseñar datos de prueba para tickets confirmados y no confirmados
+- [ ] Validar visualización de ticket luego de compra exitosa
+- [ ] Validar información correcta mostrada en el ticket
+- [ ] Validar ausencia de ticket para compra no confirmada
+- [ ] Verificar acceso solo del propietario al ticket
 ---
