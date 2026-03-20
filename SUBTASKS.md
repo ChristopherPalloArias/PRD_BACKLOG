@@ -2,21 +2,21 @@
 > Escala de estimación: Fibonacci (1, 2, 3, 5, 8, 13)
 ---
 ## HU-01: Creación de evento de obra de teatro — SP: 5
-#### **Justificación SP:** Historia de complejidad media. Requiere persistencia, validaciones de negocio, control por rol, manejo de estado inicial y cobertura de pruebas de camino feliz y límites.
+#### **Justificación SP:** Historia de complejidad media. Requiere persistencia, validaciones de negocio, control por roly cobertura de pruebas de camino feliz y límites.
 ### DEV
 
 - [ ] Crear entidad y tabla de eventos
 - [ ] Implementar endpoint o servicio de creación de eventos
 - [ ] Validar información obligatoria del evento
 - [ ] Validar aforo contra el máximo permitido de la sala
-- [ ] Persistir evento en estado borrador
+- [ ] Persistir evento con la información ingresada
 - [ ] Restringir creación a usuarios con rol administrador
 ### QA
 - [ ] Diseñar matriz de datos válidos e inválidos para creación de eventos
 - [ ] Ejecutar prueba de creación exitosa con aforo permitido
 - [ ] Ejecutar prueba de rechazo por aforo superior al máximo
 - [ ] Ejecutar prueba de rechazo por información mínima incompleta
-- [ ] Verificar que el evento quede en estado borrador al crearse
+- [ ] Verificar que el evento quede registrado correctamente al crearse
 ---
 
 ## HU-02: Configuración de tiers y precios por evento — SP: 5
