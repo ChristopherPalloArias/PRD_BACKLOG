@@ -235,6 +235,7 @@ Dado que una entrada fue liberada por expiración o pago fallido
 Cuando otro comprador consulta la disponibilidad del evento
 Entonces el sistema refleja nuevamente esa entrada como disponible
 ```
+**CA-04. Recuperación ante falla del mecanismo principal**
 ```gherkin
 Escenario: Recuperación ante falla del mecanismo principal
 Dado que existe una reserva vencida que no fue liberada por el proceso principal
