@@ -38,7 +38,7 @@ Para prepararlo para su configuración comercial y disponibilidad en el sistema
 
 ### Criterios de Aceptación (CA)
  
-**CA-01. Evento creado en estado borrador**
+**CA-01. Creación exitosa de evento**
  
 ```gherkin
 Escenario: Creación exitosa de evento
