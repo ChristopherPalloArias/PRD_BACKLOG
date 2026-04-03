@@ -33,4 +33,7 @@ El valor del MVP depende de que el inventario se mantenga consistente, de que no
 | HU-05 | Liberación automática por fallo de pago o expiración | 8 |
 | HU-06 | Notificaciones al comprador | 3 |
 | HU-07 | Visualización de ticket confirmado | 2 |
+
+**Total en alcance:** 34 SP
+
  
