@@ -82,3 +82,14 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 | **API** | Karate | Validar contratos, códigos HTTP, estructura JSON y reglas de negocio de los servicios |
 | **Rendimiento básico** | k6 | Ejecutar pruebas básicas de carga sobre los flujos más sensibles del sistema: disponibilidad y reserva |
 | **Manual / exploratoria** | Apoyo QA | Revisar temporizador, mensajes, disponibilidad visible, estados y bordes funcionales |
+
+### 4.2 Enfoque de cobertura
+ 
+- Se priorizan las historias que sostienen el valor del negocio: disponibilidad real, reserva temporal, liberación automática, notificaciones y ticket confirmado.
+- Cada HU se cubre con sus criterios de aceptación y con los casos de prueba ya definidos en GitHub Projects.
+- La trazabilidad documental se mantendrá entre:
+  - `PRD.md`
+  - `USER_STORIES.md`
+  - `SUBTASKS.md`
+  - `TEST_CASES.md`
+  - subtareas de casos de prueba en GitHub Projects
