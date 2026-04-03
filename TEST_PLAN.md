@@ -69,3 +69,16 @@ Este plan cubre el núcleo del negocio definido en el PRD:
 **Nota de alcance:** el sistema se valida en un **contexto controlado**, con usuarios previamente habilitados y con rol administrado por headers o mecanismos equivalentes del entorno de prueba.
  
 ---
+
+## 4. Estrategia de Pruebas
+ 
+La estrategia se enfoca en validar primero las funcionalidades críticas del MVP y en documentar formalmente la cobertura del sprint.
+ 
+### 4.1 Tipos de prueba
+ 
+| Tipo de prueba | Herramienta | Propósito |
+|---|---|---|
+| **Funcional** | SerenityBDD + Cucumber | Automatizar criterios de aceptación en Gherkin por cada HU del MVP |
+| **API** | Karate | Validar contratos, códigos HTTP, estructura JSON y reglas de negocio de los servicios |
+| **Rendimiento básico** | k6 | Ejecutar pruebas básicas de carga sobre los flujos más sensibles del sistema: disponibilidad y reserva |
+| **Manual / exploratoria** | Apoyo QA | Revisar temporizador, mensajes, disponibilidad visible, estados y bordes funcionales |
