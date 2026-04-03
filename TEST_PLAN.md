@@ -144,3 +144,59 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 - El resultado del ciclo queda resumido en `REALITY_CHECK.md` al cierre del sprint.
  
 ---
+## 6. Entorno de Pruebas
+ 
+| Componente | Configuración |
+|---|---|
+| **ms-events** | Spring Boot — puerto `8081` |
+| **ms-ticketing** | Spring Boot — puerto `8082` |
+| **ms-notifications** | Spring Boot — puerto `8083` |
+| **Mensajería** | RabbitMQ |
+| **Base de datos** | PostgreSQL — contenedor definido en `docker-compose` |
+| **Orquestación** | Docker + docker-compose |
+| **Identidad de prueba** | Usuarios prehabilitados en entorno controlado |
+| **Rol** | Validación por contexto controlado / headers de prueba |
+| **Pago** | Simulador MOCK con respuesta aprobada o rechazada |
+| **Aforo máximo de sala** | Valor acordado con DEV para el entorno de pruebas: **300 entradas**. Este parámetro es configurable por sala; el valor 300 corresponde a la sala de referencia usada en todos los casos de prueba del ciclo MVP. |
+ 
+---
+ 
+## 7. Herramientas
+ 
+| Herramienta | Propósito |
+|---|---|
+| **SerenityBDD + Cucumber** | Automatización funcional basada en escenarios Gherkin |
+| **Karate DSL** | Automatización de pruebas API del sistema |
+| **k6** | Pruebas básicas de rendimiento sobre los flujos sensibles |
+| **Docker / docker-compose** | Levantamiento del entorno reproducible |
+| **GitHub Projects** | Gestión del sprint y registro de casos como subtareas |
+| **GitHub Issues** | Registro y seguimiento de defectos |
+| **Markdown** | Documentación de plan, casos y análisis retrospectivo |
+ 
+---
+ 
+## 8. Roles y Responsabilidades
+ 
+### QA
+ 
+- Redactar `TEST_PLAN.md`.
+- Redactar `TEST_CASES.md`.
+- Diseñar la matriz de datos y la cobertura por HU.
+- Registrar casos de prueba como subtareas dentro de GitHub Projects.
+- Automatizar escenarios funcionales con SerenityBDD + Cucumber.
+- Diseñar y ejecutar pruebas de API con Karate.
+- Ejecutar prueba básica de rendimiento con k6.
+- Registrar defectos con evidencia.
+- Apoyar la elaboración de `REALITY_CHECK.md`.
+- Registrar, junto con el DEV, el tiempo real invertido frente a la estimación original.
+ 
+### DEV
+ 
+- Implementar las historias seleccionadas para el MVP.
+- Mantener operativo el entorno de ejecución.
+- Corregir defectos reportados por QA.
+- Apoyar con configuración, datos de prueba y revisión de reglas de negocio.
+- Participar en la comparación entre Story Points estimados y tiempo real invertido.
+- Entregar un incremento funcional que compile, corra y aporte valor al contexto del negocio.
+ 
+---
