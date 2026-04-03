@@ -105,3 +105,19 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 | **HU-05** | liberación por expiración, liberación por pago fallido, disponibilidad visible tras liberación, job de respaldo |
 | **HU-06** | notificación por compra exitosa, rechazo de pago y liberación por expiración |
 | **HU-07** | ticket visible tras compra exitosa, datos correctos, ausencia de ticket si no hubo confirmación |
+
+### 4.4 Matriz de cobertura por historia
+ 
+| HU | SerenityBDD + Cucumber | Karate | k6 | Manual / Exploratoria |
+|---|---|---|---|---|
+| **HU-01** | Sí | Sí | No | Sí |
+| **HU-02** | Sí | Sí | No | Sí |
+| **HU-03** | Sí | Sí | Sí, carga ligera en consulta | Sí |
+| **HU-04** | Sí | Sí | Sí, carga ligera en reserva | Sí |
+| **HU-05** | Sí | Sí | No | Sí |
+| **HU-06** | Sí | Sí | No | Sí |
+| **HU-07** | Sí | Sí | No | Sí |
+ 
+**Criterio de cobertura:** todas las HU del MVP tienen cobertura funcional y API; k6 se aplicará al menos sobre los flujos más sensibles al negocio: visualización de disponibilidad y reserva temporal.
+ 
+---
