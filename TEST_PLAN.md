@@ -121,3 +121,26 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 **Criterio de cobertura:** todas las HU del MVP tienen cobertura funcional y API; k6 se aplicará al menos sobre los flujos más sensibles al negocio: visualización de disponibilidad y reserva temporal.
  
 ---
+
+## 5. Criterios de Entrada y Salida
+ 
+### 5.1 Criterios de entrada
+ 
+- La HU cuenta con criterios de aceptación definidos y revisados.
+- El entorno técnico compila, corre y responde.
+- Los servicios necesarios del flujo están levantados.
+- Los datos de prueba fueron preparados o están disponibles.
+- El caso de prueba está documentado en `TEST_CASES.md`.
+- Cuando aplique, el caso ya fue registrado como subtarea en GitHub Projects.
+- **Para HU-04 y HU-05:** el temporizador de reserva está configurado en modo controlado o con mock que permita acelerar la expiración sin depender de esperas reales de 10 minutos.
+ 
+### 5.2 Criterios de salida
+ 
+- El **100% de los casos de prioridad Crítica** de la HU quedaron ejecutados con estado Pasó, o documentados formalmente con estado Sin ejecutar si el entregable es solo documental en este ciclo.
+- El **80% o más de los casos de prioridad Alta** de la HU quedaron ejecutados con estado Pasó.
+- No existen defectos críticos abiertos que bloqueen el núcleo del MVP.
+- Se cuenta con evidencia de ejecución, reporte o registro del estado del caso.
+- La cobertura de la HU quedó reflejada en reportes, tablero o repositorio.
+- El resultado del ciclo queda resumido en `REALITY_CHECK.md` al cierre del sprint.
+ 
+---
