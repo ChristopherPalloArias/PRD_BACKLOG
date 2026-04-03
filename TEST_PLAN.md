@@ -36,4 +36,18 @@ El valor del MVP depende de que el inventario se mantenga consistente, de que no
 
 **Total en alcance:** 34 SP
 
+ ### 3.2 Cobertura funcional incluida
  
+Este plan cubre el núcleo del negocio definido en el PRD:
+ 
+- Creación de eventos con aforo configurable.
+- Validación de aforo contra la capacidad máxima de la sala.
+- Configuración de tiers **VIP, General y Early Bird**.
+- Validación de cupos y precios por tier.
+- Vigencia temporal del tier **Early Bird**.
+- Visualización de eventos disponibles y disponibilidad vigente por tier.
+- Flujo de reserva con vigencia máxima de **10 minutos**.
+- Pago simulado con resultado exitoso o fallido.
+- Liberación automática de entradas por expiración o rechazo de pago.
+- Notificaciones internas al comprador.
+- Visualización del ticket confirmado únicamente tras compra exitosa.
