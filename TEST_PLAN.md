@@ -200,3 +200,119 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 - Entregar un incremento funcional que compile, corra y aporte valor al contexto del negocio.
  
 ---
+
+## 9. Cronograma y Estimación
+ 
+El esfuerzo de QA se organiza por micro-sprints de 2 días, siguiendo la complejidad funcional y los Story Points del backlog priorizado.
+ 
+| Micro-sprint | HUs | SP | Actividades QA |
+|---|---|---:|---|
+| **Días 1–2** | HU-01, HU-02 | 10 | diseño de casos, matriz de datos, validación de evento, aforo, tiers, precios y Early Bird |
+| **Días 3–4** | HU-03, HU-04 | 11 | validación de cartelera, disponibilidad, reserva, pago simulado, expiración, concurrencia y script k6 básico |
+| **Días 5–6** | HU-05, HU-06, HU-07 | 13 | liberación automática, notificaciones, ticket confirmado, consolidación de evidencias y cierre documental |
+ 
+### Relación esfuerzo QA vs SP
+ 
+- **HU de 8 SP:** mayor esfuerzo por manejo de tiempo, estados, integridad e inventario.
+- **HU de 5 SP:** esfuerzo medio por validaciones de negocio y persistencia.
+- **HU de 2–3 SP:** menor esfuerzo relativo, pero con cobertura obligatoria de aceptación y consistencia.
+ 
+### Registro expectativa vs realidad
+ 
+Durante cada micro-sprint se registrará el tiempo real invertido por QA y DEV para contrastarlo contra la estimación original en Story Points. Ese contraste se resumirá en `REALITY_CHECK.md` como parte del análisis retrospectivo del proyecto.
+ 
+---
+ 
+## 10. Entregables de Prueba
+ 
+### 10.1 Entregables documentales
+ 
+- `TEST_PLAN.md`
+- `TEST_CASES.md`
+- `REALITY_CHECK.md`
+ 
+### 10.2 Entregables del proyecto y la ejecución
+ 
+- Repositorio del producto con el MVP funcional.
+- Enlace al GitHub Projects actualizado.
+- Casos de prueba registrados como subtareas en las HUs.
+- Repositorio de pruebas funcionales con SerenityBDD + Cucumber.
+- Repositorio de pruebas API del sistema con Karate.
+- Scripts o carpeta de rendimiento con k6.
+- Evidencias de ejecución y reportes.
+- Registro de bugs o incidencias.
+- Registro de tiempos reales del micro-sprint o evidencia equivalente para el análisis retrospectivo.
+ 
+### 10.3 Entregable técnico adicional
+ 
+- Repositorio independiente de Karate con **4 escenarios** (`GET`, `POST`, `PUT`, `DELETE`) apuntando a `automationexercise.com/api_list`, con `README.md` de ejecución.
+ 
+---
+ 
+## 11. Riesgos y Contingencias
+ 
+### 11.1 Riesgos de producto
+ 
+| Riesgo | Probabilidad | Impacto | Mitigación |
+|---|:---:|:---:|---|
+| Compra simultánea sobre la última entrada disponible | Alta | Alto | Priorizar pruebas de concurrencia en HU-04; validar que el segundo intento concurrente retorna HTTP 409 o equivalente y no genera sobreventa |
+| Reserva no liberada tras expiración o pago fallido | Alta | Alto | Cubrir liberación automática y proceso de respaldo en HU-05 |
+| Early Bird visible fuera de vigencia | Media | Alto | Probar ventanas temporales en HU-02 y HU-03 |
+| Ticket generado sin compra confirmada | Media | Alto | Validar integridad entre pago, reserva y ticket en HU-04 y HU-07 |
+| Notificación incorrecta o ausente | Media | Medio | Casos específicos de compra exitosa, pago fallido y expiración |
+| Aforo del evento superior a la capacidad de la sala | Media | Alto | Casos de validación de negocio en HU-01; el límite de sala usado en pruebas es 300 entradas según acuerdo con DEV |
+ 
+### 11.2 Riesgos de proyecto
+ 
+| Riesgo | Probabilidad | Impacto | Mitigación |
+|---|:---:|:---:|---|
+| Entorno no disponible al iniciar el micro-sprint | Media | Alto | Ejecutar smoke test técnico antes del ciclo formal |
+| Desfase entre Story Points y tiempo real | Alta | Medio | Registrar tiempos reales y documentarlo en `REALITY_CHECK.md` |
+| Temporizador real de 10 minutos vuelve lentas las pruebas | Alta | Medio | Acordar configuración controlada o mocks para acelerar validaciones — criterio de entrada obligatorio para HU-04 y HU-05 |
+| HU incompletas al inicio del sprint | Media | Alto | Aplicar criterios de entrada estrictos y re-priorizar si es necesario |
+| Diferencia entre timer visible y reloj del servidor | Media | Medio | Validar expiración contra estado real del backend y no solo contra el temporizador visible |
+ 
+---
+ 
+## 12. Definiciones y Convenciones
+ 
+### 12.1 Prioridad de casos de prueba
+ 
+- **Crítico:** afecta directamente el núcleo del MVP o la entrega de valor al negocio.
+- **Alto:** afecta una regla importante, pero existe una vía parcial de continuidad.
+- **Medio:** afecta validaciones secundarias o mensajes no bloqueantes.
+- **Bajo:** impacto menor, cosmético o de mejora.
+ 
+### 12.2 Severidad de defectos
+ 
+- **Crítica:** bloquea el flujo principal, genera inconsistencia de inventario, sobreventa o impide completar el MVP.
+- **Alta:** afecta una funcionalidad importante del sprint, pero no inutiliza todo el sistema.
+- **Media:** defecto funcional acotado con workaround temporal.
+- **Baja:** problema visual, de texto o mejora no bloqueante.
+ 
+### 12.3 Convención para TEST_CASES.md
+ 
+Los campos **Resultado obtenido** y **Estado** permanecerán inicialmente como **"Sin ejecutar"**, hasta que exista una ejecución real del caso. Los casos deben quedar vinculados como subtareas dentro de su HU correspondiente en GitHub Projects.
+ 
+### 12.4 Convención de reporte de bug
+ 
+```text
+ID: BUG-XXX
+HU: HU-0X
+Severidad: Crítica | Alta | Media | Baja
+Título: [Descripción breve]
+Precondiciones: [Estado del sistema]
+Pasos: 1. ... 2. ... 3. ...
+Resultado esperado: [Según HU / criterio]
+Resultado obtenido: [Comportamiento real]
+Evidencia: [captura, video, log o reporte]
+Entorno: [local / QA / docker]
+```
+ 
+---
+ 
+## 13. Cierre
+ 
+Este plan define el alcance, la estrategia y los criterios de calidad para el ciclo de pruebas del MVP. Su propósito es garantizar que el núcleo funcional del sistema se valide con trazabilidad y criterio profesional, asegurando que cada historia de usuario entregue el valor de negocio para el que fue diseñada.
+ 
+**Redactado por:** Christopher Ismael Pallo Arias — QA
