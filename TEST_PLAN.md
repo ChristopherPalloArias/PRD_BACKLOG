@@ -93,3 +93,15 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
   - `SUBTASKS.md`
   - `TEST_CASES.md`
   - subtareas de casos de prueba en GitHub Projects
+
+### 4.3 Cobertura prevista por HU
+ 
+| HU | Cobertura principal |
+|---|---|
+| **HU-01** | creación válida, aforo excedido, información obligatoria incompleta |
+| **HU-02** | configuración válida, ventana Early Bird, precios inválidos, cupos mayores al aforo |
+| **HU-03** | cartelera visible, tier agotado, Early Bird vencido |
+| **HU-04** | compra exitosa, pago rechazado, expiración de reserva, concurrencia en última entrada — la validación de concurrencia incluye verificar que el segundo intento concurrente recibe respuesta de no disponibilidad con código HTTP 409 o equivalente definido por el equipo DEV |
+| **HU-05** | liberación por expiración, liberación por pago fallido, disponibilidad visible tras liberación, job de respaldo |
+| **HU-06** | notificación por compra exitosa, rechazo de pago y liberación por expiración |
+| **HU-07** | ticket visible tras compra exitosa, datos correctos, ausencia de ticket si no hubo confirmación |
