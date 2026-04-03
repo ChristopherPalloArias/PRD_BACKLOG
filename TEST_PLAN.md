@@ -51,3 +51,21 @@ Este plan cubre el núcleo del negocio definido en el PRD:
 - Liberación automática de entradas por expiración o rechazo de pago.
 - Notificaciones internas al comprador.
 - Visualización del ticket confirmado únicamente tras compra exitosa.
+
+### 3.3 Fuera de alcance en este ciclo
+ 
+- Registro de administrador y comprador.
+- Inicio de sesión y autenticación real con JWT.
+- Pasarela de pago real.
+- Cancelaciones y reembolsos.
+- Reportes y métricas de ventas.
+- Integración con correo o mensajería real.
+- App móvil nativa.
+- Soporte multilenguaje.
+- Selección avanzada de asientos numerados.
+- Promociones distintas a **Early Bird**.
+- Funcionalidades fuera del núcleo del MVP.
+ 
+**Nota de alcance:** el sistema se valida en un **contexto controlado**, con usuarios previamente habilitados y con rol administrado por headers o mecanismos equivalentes del entorno de prueba.
+ 
+---
