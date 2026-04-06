@@ -96,6 +96,12 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
   - `TEST_CASES.md`
   - subtareas de casos de prueba en GitHub Projects
 
+### 4.2.1 Criterio de priorización basado en riesgo
+
+Dado que las pruebas exhaustivas no son viables, la estrategia de este ciclo adopta un enfoque de priorización basado en riesgo. En consecuencia, el esfuerzo de QA se concentra primero en las historias que sostienen el valor central del MVP y que representan mayor impacto para el negocio: disponibilidad real del inventario, reserva temporal, liberación automática de entradas, integridad de la compra y prevención de sobreventa.
+
+Este criterio permite enfocar la cobertura en los flujos más sensibles del producto sin ampliar innecesariamente el alcance del MVP. Asimismo, la trazabilidad entre historias de usuario, criterios de aceptación y casos de prueba permite visualizar con claridad qué parte del riesgo funcional fue cubierta durante el ciclo.
+
 ### 4.3 Cobertura prevista por HU
 
 | HU | Cobertura principal |
@@ -107,6 +113,18 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 | **HU-05** | liberación por expiración, liberación por pago fallido, disponibilidad visible tras liberación, job de respaldo |
 | **HU-06** | notificación por compra exitosa, rechazo de pago y liberación por expiración |
 | **HU-07** | ticket visible tras compra exitosa, datos correctos, ausencia de ticket si no hubo confirmación |
+
+### 4.3.1 Priorización de HUs por riesgo de negocio
+
+| HU | Nivel de riesgo | Justificación |
+|---|---|---|
+| **HU-04** | Muy alto | Impacta directamente la reserva, la confirmación de compra, el inventario y la integridad transaccional del MVP |
+| **HU-05** | Muy alto | Su fallo bloquea entradas, afecta la disponibilidad real y compromete el valor principal del producto |
+| **HU-03** | Alto | Afecta la visibilidad de disponibilidad para el comprador y puede generar decisiones erróneas de compra |
+| **HU-02** | Alto | Define reglas comerciales críticas del evento, incluyendo cupos, precios y vigencia de Early Bird |
+| **HU-01** | Medio | Habilita la creación base del evento, necesaria para el flujo posterior |
+| **HU-06** | Medio | Afecta la comunicación del estado del proceso al comprador |
+| **HU-07** | Medio | Valida la evidencia final de compra, pero depende de la correcta ejecución previa del flujo principal |
 
 ### 4.4 Matriz de cobertura por historia
 
