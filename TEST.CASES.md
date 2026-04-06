@@ -111,3 +111,39 @@
 | TC-027 | Comprador no puede acceder al ticket de otro comprador | CA-02 | **Dado** que el Comprador A tiene un ticket confirmado **Cuando** el Comprador B intenta acceder al ticket del Comprador A **Entonces** el sistema rechaza el acceso y no expone la información del ticket ajeno | El entorno está levantado. Comprador A tiene un ticket confirmado. Comprador B tiene token distinto y no tiene compras. | Ticket ID del Comprador A · Token del Comprador B | 1. Crear compra confirmada para Comprador A y obtener el ID del ticket. 2. Autenticar como Comprador B. 3. Enviar GET al endpoint del ticket del Comprador A usando el ID conocido. 4. Verificar código HTTP y contenido de la respuesta. | HTTP 403 o equivalente. El sistema niega el acceso. No se expone información del ticket de Comprador A al Comprador B. | Sin ejecutar | Sin ejecutar | Alto |
  
 ---
+
+## Matriz de Trazabilidad — AC → Caso de Prueba → Estado
+ 
+| HU | Criterio de Aceptación | Caso(s) que lo cubre(n) | Estado |
+|---|---|---|---|
+| HU-01 | CA-01 Creación exitosa de evento | TC-001 | Sin ejecutar |
+| HU-01 | CA-02 Rechazo por aforo superior | TC-002 | Sin ejecutar |
+| HU-01 | CA-03 Rechazo por información incompleta | TC-003, TC-004 | Sin ejecutar |
+| HU-02 | CA-01 Configuración válida de tiers | TC-005 | Sin ejecutar |
+| HU-02 | CA-02 Vigencia temporal del Early Bird | TC-006 | Sin ejecutar |
+| HU-02 | CA-03 Rechazo por precio inválido | TC-007 | Sin ejecutar |
+| HU-02 | CA-04 Rechazo por cupos mayores al aforo | TC-008 | Sin ejecutar |
+| HU-03 | CA-01 Consulta de eventos disponibles | TC-009, TC-029 | Sin ejecutar |
+| HU-03 | CA-02 Tier agotado | TC-010, TC-029 | Sin ejecutar |
+| HU-03 | CA-03 Early Bird vencido | TC-011 | Sin ejecutar |
+| HU-04 | CA-01 Compra exitosa dentro del tiempo | TC-012 | Sin ejecutar |
+| HU-04 | CA-02 Compra fallida por pago rechazado | TC-013 | Sin ejecutar |
+| HU-04 | CA-03 Expiración de la reserva | TC-014, TC-028 | Sin ejecutar |
+| HU-04 | CA-04 Protección ante compra simultánea | TC-015 | Sin ejecutar |
+| HU-05 | CA-01 Liberación por expiración | TC-016, TC-026 | Sin ejecutar |
+| HU-05 | CA-02 Liberación por pago rechazado | TC-017 | Sin ejecutar |
+| HU-05 | CA-03 Disponibilidad actualizada tras liberación | TC-018 | Sin ejecutar |
+| HU-05 | CA-04 Liberación por proceso de respaldo | TC-019 | Sin ejecutar |
+| HU-06 | CA-01 Notificación de compra exitosa | TC-020 | Sin ejecutar |
+| HU-06 | CA-02 Notificación de pago fallido | TC-021 | Sin ejecutar |
+| HU-06 | CA-03 Notificación de liberación por expiración | TC-022 | Sin ejecutar |
+| HU-07 | CA-01 Ticket disponible tras compra exitosa | TC-023 | Sin ejecutar |
+| HU-07 | CA-02 Ticket con información correcta | TC-024 | Sin ejecutar |
+| HU-07 | CA-03 Ausencia de ticket en compra no confirmada | TC-025 | Sin ejecutar |
+| HU-07 | Acceso restringido al propietario | TC-027 | Sin ejecutar |
+ 
+**Cobertura total:** 29 casos · 7 HUs · 24 criterios de aceptación cubiertos
+ 
+---
+ 
+**Redactado por:** Christopher Ismael Pallo Arias — QA
