@@ -81,7 +81,7 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 |---|---|---|
 | **Funcional** | SerenityBDD + Cucumber | Automatizar criterios de aceptación en Gherkin por cada HU del MVP |
 | **API** | Karate DSL | Validar contratos, códigos HTTP, estructura JSON y reglas de negocio de los servicios |
-| **Rendimiento** | k6 | Validar comportamiento bajo carga sobre los flujos críticos del negocio. Umbrales definidos: `GET /events` → p95 < 400 ms, mínimo 80 TPS · `POST /reservas` → p95 < 600 ms, mínimo 30 TPS |
+| **Rendimiento** | k6 | Validar comportamiento bajo carga sobre los flujos críticos del backend. Umbrales definidos: `GET /api/v1/events` → p95 < 400 ms, mínimo 80 TPS · `POST /api/v1/reservations` → p95 < 600 ms, mínimo 30 TPS. Estas pruebas no sustituyen la cobertura funcional de Karate; se enfocan exclusivamente en latencia, throughput, tasa de error y estabilidad bajo carga |
 | **Validación de datos** | SQL directo sobre PostgreSQL + mecanismos de soporte del entorno de prueba | Verificar consistencia de inventario, estados de reserva y tickets como capa de evidencia adicional a la respuesta HTTP y a los flujos automatizados. |
 | **Manual / exploratoria** | Apoyo QA | Revisar temporizador, mensajes, disponibilidad visible, estados y bordes funcionales |
 
@@ -137,6 +137,8 @@ Este criterio permite enfocar la cobertura en los flujos más sensibles del prod
 | **HU-05** | Sí | Sí | No | Sí | Sí |
 | **HU-06** | Sí | Sí | No | No | Sí |
 | **HU-07** | Sí | Sí | No | Sí | Sí |
+
+**Aclaración sobre k6:** la cobertura marcada con k6 en HU-03 y HU-04 corresponde únicamente a pruebas de rendimiento sobre los flujos críticos de consulta de eventos y creación de reservas. No implica replicar en k6 la totalidad de los casos funcionales definidos en `TEST_CASES.md`, ya que la validación funcional, de reglas de negocio y de estados transaccionales corresponde a la suite de Karate.
 
 **Criterio de cobertura:** todas las HU del MVP tienen cobertura funcional y API. k6 se ejecutará sobre los flujos más sensibles al negocio con umbrales definidos de latencia y TPS. La validación SQL se aplica sobre las HUs que modifican inventario o generan estados transaccionales críticos.
 
