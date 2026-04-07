@@ -82,7 +82,7 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 | **Funcional** | SerenityBDD + Cucumber | Automatizar criterios de aceptación en Gherkin por cada HU del MVP |
 | **API** | Karate DSL | Validar contratos, códigos HTTP, estructura JSON y reglas de negocio de los servicios |
 | **Rendimiento** | k6 | Validar comportamiento bajo carga sobre los flujos críticos del negocio. Umbrales definidos: `GET /events` → p95 < 400 ms, mínimo 80 TPS · `POST /reservas` → p95 < 600 ms, mínimo 30 TPS |
-| **Validación de datos** | SQL directo sobre PostgreSQL | Verificar consistencia de inventario, estados de reserva y tickets directamente en base de datos como capa de evidencia adicional a la respuesta HTTP |
+| **Validación de datos** | SQL directo sobre PostgreSQL + mecanismos de soporte del entorno de prueba | Verificar consistencia de inventario, estados de reserva y tickets como capa de evidencia adicional a la respuesta HTTP y a los flujos automatizados. |
 | **Manual / exploratoria** | Apoyo QA | Revisar temporizador, mensajes, disponibilidad visible, estados y bordes funcionales |
 
 ### 4.2 Enfoque de cobertura
@@ -111,7 +111,7 @@ Este criterio permite enfocar la cobertura en los flujos más sensibles del prod
 | **HU-03** | cartelera visible, tier agotado, Early Bird vencido |
 | **HU-04** | compra exitosa, pago rechazado, expiración de reserva, concurrencia en última entrada — la validación de concurrencia incluye verificar que el segundo intento concurrente recibe respuesta de no disponibilidad con código HTTP 409 o equivalente definido por el equipo DEV |
 | **HU-05** | liberación por expiración, liberación por pago fallido, disponibilidad visible tras liberación, job de respaldo |
-| **HU-06** | notificación por compra exitosa, rechazo de pago y liberación por expiración |
+| **HU-06** | notificación de PAYMENT_SUCCESS, PAYMENT_FAILED y RESERVATION_EXPIRED |
 | **HU-07** | ticket visible tras compra exitosa, datos correctos, ausencia de ticket si no hubo confirmación |
 
 ### 4.3.1 Priorización de HUs por riesgo de negocio
@@ -152,16 +152,16 @@ Este criterio permite enfocar la cobertura en los flujos más sensibles del prod
 - Los datos de prueba fueron preparados o están disponibles.
 - El caso de prueba está documentado en `TEST_CASES.md`.
 - Cuando aplique, el caso ya fue registrado como subtarea en GitHub Projects.
-- **Para HU-04 y HU-05:** el temporizador de reserva está configurado en modo controlado o con mock que permita acelerar la expiración sin depender de esperas reales de 10 minutos.
+- **Para HU-04 y HU-05:** se aplican mecanismos controlados de testability en el backend, permitiendo el disparo manual del proceso de expiración en el entorno de prueba y la verificación complementaria de estados correspondientes sin depender de esperas reales de 10 minutos.
 
 ### 5.2 Criterios de salida
 
-- El **100% de los casos de prioridad Crítica** de la HU quedaron ejecutados con estado Pasó, o documentados formalmente con estado Sin ejecutar si el entregable es solo documental en este ciclo.
-- El **80% o más de los casos de prioridad Alta** de la HU quedaron ejecutados con estado Pasó.
+- El 100% de los casos de prioridad crítica ejecutados con estado `Pasó`.
+- El 100% de los casos de prioridad alta ejecutados con estado `Pasó`.
 - No existen defectos críticos abiertos que bloqueen el núcleo del MVP.
-- Se cuenta con evidencia de ejecución, reporte o registro del estado del caso.
+- Las evidencias se encuentran disponibles en reportes Karate y documentación de cierre.
 - La cobertura de la HU quedó reflejada en reportes, tablero o repositorio.
-- El resultado del ciclo queda resumido en `REALITY_CHECK.md` al cierre del sprint.
+- El resultado oficial quedó consolidado en `TEST_CASES.md` y `REALITY_CHECK.md`.
 
 ---
 
@@ -265,7 +265,7 @@ Durante cada micro-sprint se registrará el tiempo real invertido por QA y DEV p
 - Evidencias de ejecución y reportes.
 - Registro de bugs o incidencias.
 - Registro de tiempos reales del micro-sprint o evidencia equivalente para el análisis retrospectivo.
-- **Matriz de trazabilidad AC → Caso de prueba → Estado:** documento Markdown que vincula cada criterio de aceptación con su caso de prueba correspondiente y el resultado de ejecución, actualizado al cierre de cada micro-sprint.
+- **Matriz de trazabilidad AC → Caso de prueba → Estado:** documento Markdown que vincula cada criterio de aceptación con su caso de prueba correspondiente y el resultado de ejecución, actualizado al cierre de cada micro-sprint y consolidado al cierre del ciclo MVP.
 
 ### 10.3 Entregable técnico adicional
 
@@ -283,7 +283,7 @@ Durante cada micro-sprint se registrará el tiempo real invertido por QA y DEV p
 | Reserva no liberada tras expiración o pago fallido | Alta | Alto | Cubrir liberación automática y proceso de respaldo en HU-05 |
 | Early Bird visible fuera de vigencia | Media | Alto | Probar ventanas temporales en HU-02 y HU-03 |
 | Ticket generado sin compra confirmada | Media | Alto | Validar integridad entre pago, reserva y ticket en HU-04 y HU-07; confirmar con validación SQL directa sobre la base de datos |
-| Notificación incorrecta o ausente | Media | Medio | Casos específicos de compra exitosa, pago fallido y expiración |
+| Notificación incorrecta o ausente | Media | Medio | Casos específicos de PAYMENT_SUCCESS, PAYMENT_FAILED y RESERVATION_EXPIRED |
 | Aforo del evento superior a la capacidad de la sala | Media | Alto | Casos de validación de negocio en HU-01; el límite de sala usado en pruebas es 300 entradas según acuerdo con DEV |
 
 ### 11.2 Riesgos de proyecto
@@ -292,7 +292,7 @@ Durante cada micro-sprint se registrará el tiempo real invertido por QA y DEV p
 |---|:---:|:---:|---|
 | Entorno no disponible al iniciar el micro-sprint | Media | Alto | Ejecutar smoke test técnico antes del ciclo formal |
 | Desfase entre Story Points y tiempo real | Alta | Medio | Registrar tiempos reales y documentarlo en `REALITY_CHECK.md` |
-| Temporizador real de 10 minutos vuelve lentas las pruebas | Alta | Medio | Acordar configuración controlada o mocks para acelerar validaciones — criterio de entrada obligatorio para HU-04 y HU-05 |
+| Temporizador real de 10 minutos vuelve lentas las pruebas | Alta | Medio | Uso de mecanismos de testability en backend y disparo manual del proceso de expiración en entorno de prueba — criterio de entrada obligatorio |
 | HU incompletas al inicio del sprint | Media | Alto | Aplicar criterios de entrada estrictos y re-priorizar si es necesario |
 | Diferencia entre timer visible y reloj del servidor | Media | Medio | Validar expiración contra estado real del backend y no solo contra el temporizador visible |
 
@@ -316,7 +316,7 @@ Durante cada micro-sprint se registrará el tiempo real invertido por QA y DEV p
 
 ### 12.3 Convención para TEST_CASES.md
 
-Los campos **Resultado obtenido** y **Estado** permanecerán inicialmente como **"Sin ejecutar"**, hasta que exista una ejecución real del caso. Los casos deben quedar vinculados como subtareas dentro de su HU correspondiente en GitHub Projects.
+Los campos **Resultado obtenido** y **Estado** se registran inicialmente como **"Sin ejecutar"** y se actualizan a su estatus definitivo (ej. `Pasó`) al cierre de la ejecución de la suite automatizada real. Los casos deben quedar vinculados como subtareas dentro de su HU correspondiente en GitHub Projects.
 
 ### 12.4 Convención de reporte de bug
 
@@ -338,5 +338,13 @@ Entorno: [local / QA / docker]
 ## 13. Cierre
 
 Este plan define el alcance, la estrategia y los criterios de calidad para el ciclo de pruebas del MVP. Su propósito es garantizar que el núcleo funcional del sistema se valide con trazabilidad y criterio profesional, asegurando que cada historia de usuario entregue el valor de negocio para el que fue diseñada.
+
+### 13.1 Estado de ejecución del ciclo
+
+- Se ejecutaron los 29 casos de prueba definidos para el ciclo MVP.
+- Los 29 casos finalizaron exitosamente con estado `Pasó`.
+- Se logró una cobertura final de 7 HUs y 24 criterios de aceptación.
+- La evidencia formal técnica está disponible en los reportes de Karate y en la documentación del proyecto.
+- El cierre de ejecución quedó documentado y consolidado en `TEST_CASES.md` y `REALITY_CHECK.md`.
 
 **Redactado por:** Christopher Ismael Pallo Arias — QA
