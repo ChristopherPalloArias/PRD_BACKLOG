@@ -44,10 +44,45 @@ Nuestro MVP orquesta un **temporizador ágil de 10 minutos** respaldado por jobs
 
 ### 📚 Glosario Transversal
 *   **Tier:** Categorías de las entradas disponibles para un evento.
-*   **Early Bird:** Categoría con precio especial disponible solo durante una ventana de tiempo definida.
+*   **Early Bird:** Categoría con precio especial disponible solo durante una ventana de tiempo definida por el organizador.
 *   **Reserva:** Bloqueo temporal de una entrada mientras el comprador completa el pago.
-*   **Timeout & Timer:** Vencimiento automático de la reserva.
-*   **Scheduler & Job de respaldo:** Procesos silentes que barren reservas abandonadas garantizando disponibilidad perpetua.
+*   **Timeout:** Vencimiento automático de la reserva cuando el comprador no paga a tiempo.
+*   **Timer:** Temporizador que le muestra al comprador cuánto tiempo le queda.
+*   **Scheduler:** Proceso que corre en segundo plano revisando reservas vencidas.
+*   **Job de respaldo:** Proceso secundario que actúa si el scheduler falla, para que ninguna reserva se quede bloqueada.
+*   **Bloqueo optimista:** Control que garantiza que una entrada solo puede ser reservada por un comprador a la vez.
+
+### 🔀 Flujo Operativo del MVP
+
+```mermaid
+flowchart TD
+    A[Acceso al sistema en contexto controlado] --> B{Rol previamente habilitado}
+
+    B -->|Organizador| C[Crear evento con información base y aforo]
+    C --> D[Configurar tiers, cupos y precios]
+    D --> E[Definir vigencia de Early Bird]
+    E --> F[Evento visible en el sistema]
+
+    B -->|Comprador| G[Consultar eventos disponibles]
+    F --> G
+
+    G --> H[Ver disponibilidad por tier]
+    H --> I[Seleccionar tier y generar reserva]
+    I --> J{Pago dentro de 10 minutos}
+
+    J -->|Sí, pago exitoso| K[Confirmar compra]
+    K --> L[Descontar inventario]
+    L --> M[Notificar compra exitosa]
+    M --> N[Mostrar ticket confirmado]
+
+    J -->|No, pago fallido| O[Liberar entrada]
+    O --> P[Actualizar disponibilidad]
+    P --> Q[Notificar pago fallido]
+
+    J -->|No, reserva expirada| R[Liberar entrada]
+    R --> S[Actualizar disponibilidad]
+    S --> T[Notificar liberación de reserva]
+```
 
 ---
 
@@ -68,7 +103,11 @@ Para cumplir con la separación de responsabilidades y aislar la infraestructura
 
 ### Fase Taller 6: Concepción del Producto (Diseño)
 Aquí diagramamos la base de nuestro negocio, los requerimientos y las historias.
-- 📐 **Historia y Flujos:** [Revisar tablero Story Map interactivo en FigJam](https://www.figma.com/figjam) (Flujos MVP, Planning Poker, Actividades).
+- 📐 **Historia y Flujos:** [Revisar tablero Story Map interactivo en FigJam](https://www.figma.com/board/BIthdjee35TGVFThd2Qqff/Story-Map-%E2%80%94-Sistema-de-Venta-de-Entradas--Ticketing-?node-id=0-1&t=MNZ1TjxddfBPOwVN-1)
+  > Este FigJam incluye:
+  > - **El flujo del MVP**, para visualizar la interacción principal de organizador y comprador.
+  > - **El Story Map**, como primer borrador visual para ordenar actividades, tareas e historias de usuario antes de consolidar el backlog final.
+  > - **La sesión de Planning Poker**, como evidencia del proceso colaborativo de estimación en Story Points.
 - 🏗️ **Documento PRD:** [`PRD.md`](./PRD.md)
 - 👤 **Historias de Usuario:** [`USER_STORIES.md`](./USER_STORIES.md)
 - ☑️ **Subtareas DEV:** [`SUBTASKS.md`](./SUBTASKS.md)
