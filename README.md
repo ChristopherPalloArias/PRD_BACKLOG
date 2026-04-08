@@ -103,9 +103,9 @@ Para cumplir con la separación de responsabilidades y aislar la infraestructura
 | Perfil / Dominio | Repositorio Oficial | Resultados en Vivo |
 |---|---|---|
 | 🏗️ **Backend & Aplicación** | [🔗 **TICKETING_SEM7**](https://github.com/ChristopherPalloArias/TICKETING_SEM7) | *Microservicios Base (Toda la app)* |
-| 🥋 **Certificación Funcional** | [🔗 **TICKETING_SEM7_KARATE**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_KARATE) | [🌐 Dashboard Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/) |
+| 🥋 **Certificación Funcional API** | [🔗 **TICKETING_SEM7_KARATE**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_KARATE) | [🌐 Dashboard Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/) |
 | 🚀 **Pruebas de Carga (SLA)** | [🔗 **TICKETING_SEM7_K6**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_K6) | [🌐 Informe k6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/) |
-| 🥒 **Pruebas BDD (Funcional)** | [🔗 **TICKETING_SEM7_SERENITY**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_SERENITY) | *Suites de Serenity BDD* |
+| 🥒 **Pruebas BDD (Funcional UI)** | [🔗 **TICKETING_SEM7_SERENITY**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_SERENITY) | [🌐 Reporte Serenity UI](https://christopherpalloarias.github.io/TICKETING_SEM7_SERENITY/) |
 
 ---
 
@@ -135,6 +135,7 @@ Aquí consolidamos la estrategia de validación exigida por rúbrica para certif
 
 Si estás evaluando el cumplimiento de todos los hitos del taller para la calificación compartida (QA 50% / DEV 50%), te sugerimos este estándar de revisión:
 1. **Entender el Contexto de Riesgo:** Abre aquí mismo el [`TEST_PLAN.md`](./TEST_PLAN.md) para verificar cómo priorizamos agresivamente las pruebas funcionales.
-2. **Revisión de Flujos Funcionales:** Ingresa al Dashboard vivo de **[Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/)** que certifica en BDD que no permitimos sobreventas.
-3. **Revisión de SLA y Rendimiento:** Verifica la carga paramétrica asíncrona inyectada contra el servidor en el reporte público de **[K6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/)**.
-4. **Cierre de Ciclo:** Evalúa las lecciones de micro-sprint leyendo las respuestas del equipo en nuestro [`REALITY_CHECK.md`](./REALITY_CHECK.md).
+2. **Revisión de Flujos Funcionales API:** Ingresa al Dashboard vivo de **[Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/)** que certifica en BDD a nivel core que no permitimos sobreventas.
+3. **Revisión de Experiencia Usuario UI:** Accede al reporte visual interactivo paso a paso de **[Serenity BDD](https://christopherpalloarias.github.io/TICKETING_SEM7_SERENITY/)** para comprobar la certidumbre del Frontend (React) con patrón Screenplay.
+4. **Revisión de SLA y Rendimiento:** Verifica la carga paramétrica asíncrona inyectada contra el servidor en el reporte público de **[K6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/)**.
+5. **Cierre de Ciclo:** Evalúa las lecciones de micro-sprint leyendo las respuestas del equipo en nuestro [`REALITY_CHECK.md`](./REALITY_CHECK.md).
