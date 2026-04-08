@@ -79,28 +79,32 @@ La estrategia se enfoca en validar primero las funcionalidades críticas del MVP
 
 | Tipo de prueba | Herramienta | Propósito |
 |---|---|---|
-| **Funcional** | SerenityBDD + Cucumber | Automatizar criterios de aceptación en Gherkin por cada HU del MVP |
-| **API** | Karate DSL | Validar contratos, códigos HTTP, estructura JSON y reglas de negocio de los servicios |
-| **Rendimiento** | k6 | Validar comportamiento bajo carga sobre los flujos críticos del backend. Umbrales definidos: `GET /api/v1/events` → p95 < 400 ms, mínimo 80 TPS · `POST /api/v1/reservations` → p95 < 600 ms, mínimo 30 TPS. Estas pruebas no sustituyen la cobertura funcional de Karate; se enfocan exclusivamente en latencia, throughput, tasa de error y estabilidad bajo carga |
-| **Validación de datos** | SQL directo sobre PostgreSQL + mecanismos de soporte del entorno de prueba | Verificar consistencia de inventario, estados de reserva y tickets como capa de evidencia adicional a la respuesta HTTP y a los flujos automatizados. |
+| **Funcional UI — flujos priorizados del comprador** | SerenityBDD + Cucumber | Automatizar los flujos del comprador anónimo (guest) que son observables y verificables desde el navegador. Cubre HU-03, HU-04 y HU-07. **No automatiza HUs administrativas, lógica scheduler-driven, concurrencia multi-actor ni notificaciones RabbitMQ.** |
+| **API / Reglas de negocio / Integración** | Karate DSL | Validación exhaustiva de los 29 casos del ciclo MVP: contratos REST, reglas de negocio, estados de reserva (`PENDING → CONFIRMED / PAYMENT_FAILED / EXPIRED`), concurrencia, expiración por scheduler, liberación de cupo, notificaciones y validaciones negativas. Cubre la totalidad de HU-01 a HU-07. |
+| **Rendimiento** | k6 | Validar comportamiento bajo carga sobre los flujos críticos del backend. Umbrales definidos: `GET /api/v1/events` → p95 < 400 ms, mínimo 80 TPS · `POST /api/v1/reservations` → p95 < 600 ms, mínimo 30 TPS. No sustituye la cobertura funcional de Karate; foco exclusivo en latencia, throughput, tasa de error y resiliencia bajo carga. |
+| **Consistencia de datos** | SQL directo sobre PostgreSQL | Verificar quota de tiers, estados de reserva y tickets como capa de evidencia adicional a la respuesta HTTP y a los flujos automatizados de Karate. |
 | **Manual / exploratoria** | Apoyo QA | Revisar temporizador, mensajes, disponibilidad visible, estados y bordes funcionales |
 
 ### 4.2 Enfoque de cobertura
 
-- Se priorizan las historias que sostienen el valor del negocio: disponibilidad real, reserva temporal, liberación automática, notificaciones y ticket confirmado.
-- Cada HU se cubre con sus criterios de aceptación y con los casos de prueba ya definidos en GitHub Projects.
-- La trazabilidad documental se mantendrá entre:
-  - `PRD.md`
-  - `USER_STORIES.md`
-  - `SUBTASKS.md`
-  - `TEST_CASES.md`
-  - subtareas de casos de prueba en GitHub Projects
+La estrategia adopta un modelo de automatización por capas donde cada herramienta prueba lo que hace mejor, sin duplicar cobertura:
 
-### 4.2.1 Criterio de priorización basado en riesgo
+- **SerenityBDD + Cucumber:** cubre los flujos del comprador *visibles en el navegador* priorizados por valor y ROI. La cobertura UI se concentra en HU-03, HU-04 y HU-07 — los 9 escenarios estables ejecutados en verde. Los flujos scheduler-driven, concurrentes o de canal RabbitMQ se excluyen de la capa UI por diseño.
+- **Karate DSL:** valida exhaustivamente los 29 casos del ciclo MVP a nivel de API REST, incluyendo todas las HUs (HU-01 a HU-07), reglas de negocio profundas, estados transaccionales, concurrencia, expiración por scheduler y notificaciones.
+- **k6:** prueba de rendimiento bajo carga progresiva sobre los flujos más críticos. No duplica la validación funcional de Karate.
+- **SQL:** capa de evidencia de consistencia de datos en base de datos tras la ejecución. Complementa —no reemplaza— los asserts HTTP de Karate.
+- La trazabilidad documental se mantiene entre `PRD.md`, `USER_STORIES.md`, `SUBTASKS.md`, `TEST_CASES.md` y GitHub Projects.
 
-Dado que las pruebas exhaustivas no son viables, la estrategia de este ciclo adopta un enfoque de priorización basado en riesgo. En consecuencia, el esfuerzo de QA se concentra primero en las historias que sostienen el valor central del MVP y que representan mayor impacto para el negocio: disponibilidad real del inventario, reserva temporal, liberación automática de entradas, integridad de la compra y prevención de sobreventa.
+### 4.2.1 Criterio de asignación de capa basado en riesgo y ROI
 
-Este criterio permite enfocar la cobertura en los flujos más sensibles del producto sin ampliar innecesariamente el alcance del MVP. Asimismo, la trazabilidad entre historias de usuario, criterios de aceptación y casos de prueba permite visualizar con claridad qué parte del riesgo funcional fue cubierta durante el ciclo.
+Dado que las pruebas exhaustivas no son viables en todas las capas simultáneamente, la estrategia adopta un enfoque de priorización basado en riesgo y retorno de inversión (ROI):
+
+- **Automatización UI (Serenity)** cuando: la validación es inherentemente visual, el flujo conecta múltiples pantallas del comprador y el estado se manifiesta como cambio observable en el DOM sin depender del estado interno del backend.
+- **Automatización API (Karate)** cuando: la lógica depende de schedulers o temporizadores internos (`ExpirationService`, TTL de 10 min), la validación requiere múltiples actores concurrentes, el comportamiento no es reproducible desde UI sin `Thread.sleep()`, o la regla vive exclusivamente en el backend.
+- **Rendimiento (k6)** cuando: el flujo es crítico para el negocio y la latencia o el throughput bajo carga es el riesgo a mitigar.
+- **SQL** cuando: la integridad de datos no es observable desde HTTP y requiere verificación directa en base de datos.
+
+Este criterio permite enfocar el esfuerzo de QA en los flujos más sensibles sin ampliar innecesariamente el alcance de cada suite, manteniendo la trazabilidad entre historias, criterios de aceptación y casos de prueba.
 
 ### 4.3 Cobertura prevista por HU
 
@@ -128,19 +132,27 @@ Este criterio permite enfocar la cobertura en los flujos más sensibles del prod
 
 ### 4.4 Matriz de cobertura por historia
 
-| HU | SerenityBDD + Cucumber | Karate | k6 | Validación SQL | Manual / Exploratoria |
+| HU | SerenityBDD + Cucumber (UI) | Karate (API) | k6 | Validación SQL | Manual / Exploratoria |
 |---|---|---|---|---|---|
-| **HU-01** | Sí | Sí | No | Sí | Sí |
-| **HU-02** | Sí | Sí | No | Sí | Sí |
-| **HU-03** | Sí | Sí | Sí, p95 < 400 ms en consulta | No | Sí |
-| **HU-04** | Sí | Sí | Sí, p95 < 600 ms en reserva | Sí | Sí |
-| **HU-05** | Sí | Sí | No | Sí | Sí |
-| **HU-06** | Sí | Sí | No | No | Sí |
-| **HU-07** | Sí | Sí | No | Sí | Sí |
+| **HU-01** | No directo por UI ¹ | Sí (TC-001–004) | No | Sí | Sí |
+| **HU-02** | No directo por UI ¹ | Sí (TC-005–008) | No | Sí | Sí |
+| **HU-03** | **Sí — flujos UI del comprador** | Sí (TC-009–011, TC-029) | Sí, p95 < 400 ms | No | Sí |
+| **HU-04** | **Sí — flujos UI del comprador** | Sí (TC-012–015, TC-028) | Sí, p95 < 600 ms | Sí | Sí |
+| **HU-05** | No directo por UI ² | Sí (TC-016–019, TC-026) | No | Sí | Sí |
+| **HU-06** | No directo por UI ³ | Sí (TC-020–022) | No | No | Sí |
+| **HU-07** | **Sí — flujos UI del comprador** | Sí (TC-023–025, TC-027) | No | Sí | Sí |
 
-**Aclaración sobre k6:** la cobertura marcada con k6 en HU-03 y HU-04 corresponde únicamente a pruebas de rendimiento sobre los flujos críticos de consulta de eventos y creación de reservas. No implica replicar en k6 la totalidad de los casos funcionales definidos en `TEST_CASES.md`, ya que la validación funcional, de reglas de negocio y de estados transaccionales corresponde a la suite de Karate.
+> ¹ HU-01 y HU-02 son operaciones de administración sin flujo de comprador en el navegador. Su cobertura funcional corresponde íntegramente a Karate.
+> ² HU-05 es lógica scheduler-driven (TTL 10 min + ciclo `ExpirationService`). Automatizar en Selenium requeriría `Thread.sleep()` → frágil e inviable. Cubierta íntegramente por Karate + SQL.
+> ³ HU-06 depende del canal RabbitMQ. No es verificable desde Selenium sin mocks externos. Cubierta por Karate (historial de `ms-notifications`).
 
-**Criterio de cobertura:** todas las HU del MVP tienen cobertura funcional y API. k6 se ejecutará sobre los flujos más sensibles al negocio con umbrales definidos de latencia y TPS. La validación SQL se aplica sobre las HUs que modifican inventario o generan estados transaccionales críticos.
+**Cobertura Serenity (ejecutada):** HU-03, HU-04 y HU-07 — 9 escenarios, 0 fallos, BUILD SUCCESS. Serenity complementa a Karate en la capa de presentación; no lo replica.
+
+**Cobertura Karate (ejecutada):** HU-01 a HU-07 — 29 casos, cobertura exhaustiva de reglas de negocio, contratos API, estados transaccionales, concurrencia, scheduler y notificaciones.
+
+**Aclaración sobre k6:** la cobertura con k6 en HU-03 y HU-04 es exclusivamente de rendimiento (latencia, throughput, estabilidad bajo carga). No implica replicar la validación funcional de Karate.
+
+**Principio de diseño:** no todo criterio de aceptación conviene automatizarse desde la interfaz de usuario. La asignación de capa se basa en el tipo de validación, el riesgo de negocio y el ROI de automatización (ver §4.2.1).
 
 ---
 
@@ -161,7 +173,7 @@ Este criterio permite enfocar la cobertura en los flujos más sensibles del prod
 - El 100% de los casos de prioridad crítica ejecutados con estado `Pasó`.
 - El 100% de los casos de prioridad alta ejecutados con estado `Pasó`.
 - No existen defectos críticos abiertos que bloqueen el núcleo del MVP.
-- Las evidencias se encuentran disponibles en reportes Karate y documentación de cierre.
+- Las evidencias se encuentran disponibles en los reportes de SerenityBDD + Cucumber, Karate, k6 y en la documentación de cierre del proyecto.
 - La cobertura de la HU quedó reflejada en reportes, tablero o repositorio.
 - El resultado oficial quedó consolidado en `TEST_CASES.md` y `REALITY_CHECK.md`.
 
@@ -346,7 +358,7 @@ Este plan define el alcance, la estrategia y los criterios de calidad para el ci
 - Se ejecutaron los 29 casos de prueba definidos para el ciclo MVP.
 - Los 29 casos finalizaron exitosamente con estado `Pasó`.
 - Se logró una cobertura final de 7 HUs y 24 criterios de aceptación.
-- La evidencia formal técnica está disponible en los reportes de Karate y en la documentación del proyecto.
+- La evidencia formal técnica está disponible en los reportes de SerenityBDD + Cucumber, Karate, k6 y en la documentación consolidada del proyecto.
 - El cierre de ejecución quedó documentado y consolidado en `TEST_CASES.md` y `REALITY_CHECK.md`.
 
 **Redactado por:** Christopher Ismael Pallo Arias — QA
