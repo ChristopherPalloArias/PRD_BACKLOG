@@ -134,8 +134,8 @@ Aquí consolidamos la estrategia de validación exigida por rúbrica para certif
 ## 🧭 ¿Cómo Auditar Este Proyecto Completo? (Taller 7)
 
 Si estás evaluando el cumplimiento de todos los hitos del taller para la calificación compartida (QA 50% / DEV 50%), te sugerimos este estándar de revisión:
-1. **Entender el Contexto de Riesgo:** Abre aquí mismo el [`TEST_PLAN.md`](./TEST_PLAN.md) para verificar cómo priorizamos agresivamente las pruebas funcionales.
-2. **Revisión de Flujos Funcionales API:** Ingresa al Dashboard vivo de **[Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/)** que certifica en BDD a nivel core que no permitimos sobreventas.
-3. **Revisión de Experiencia Usuario UI:** Accede al reporte visual interactivo paso a paso de **[Serenity BDD](https://christopherpalloarias.github.io/TICKETING_SEM7_SERENITY/)** para comprobar la certidumbre del Frontend (React) con patrón Screenplay.
-4. **Revisión de SLA y Rendimiento:** Verifica la carga paramétrica asíncrona inyectada contra el servidor en el reporte público de **[K6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/)**.
-5. **Cierre de Ciclo:** Evalúa las lecciones de micro-sprint leyendo las respuestas del equipo en nuestro [`REALITY_CHECK.md`](./REALITY_CHECK.md).
+1. **Estrategia y Cobertura:** Revisa el [`TEST_PLAN.md`](./TEST_PLAN.md) para entender la priorización basada en riesgo y la organización formal de nuestra matriz de pruebas.
+2. **Capa Funcional E2E (UI):** Navega por el reporte interactivo de **[Serenity BDD](https://christopherpalloarias.github.io/TICKETING_SEM7_SERENITY/)** para evidenciar la automatización fluida del comprador final desde el frontend (React) usando el patrón Screenplay.
+3. **Capa Funcional Transaccional (API):** Ingresa al dashboard de **[Karate DSL](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/)**, donde certificamos las reglas de negocio críticas y verificamos que el sistema es a prueba de sobreventas a nivel backend.
+4. **Capa de Rendimiento y Tolerancia:** Analiza nuestro informe gráfico en **[k6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/)**, donde sometemos la arquitectura concurrente a inyecciones asíncronas para comprobar los SLAs.
+5. **Retrospectiva del Proyecto:** Lee nuestro [`REALITY_CHECK.md`](./REALITY_CHECK.md) para conocer el contraste entre el Taller 6 (teórico) y el Taller 7 (práctico), así como las lecciones técnicas que nos llevamos como equipo.
