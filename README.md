@@ -52,36 +52,46 @@ Nuestro MVP orquesta un **temporizador ágil de 10 minutos** respaldado por jobs
 *   **Job de respaldo:** Proceso secundario que actúa si el scheduler falla, para que ninguna reserva se quede bloqueada.
 *   **Bloqueo optimista:** Control que garantiza que una entrada solo puede ser reservada por un comprador a la vez.
 
-### 🔀 Flujo Operativo del MVP
+### 🔀 Flujo Operativo del MVP (Alcance Original Firmado)
 
 ```mermaid
 flowchart TD
     A[Acceso al sistema en contexto controlado] --> B{Rol previamente habilitado}
 
-    B -->|Organizador| C[Crear evento con información base y aforo]
+    B -->|Organizador| C[Crear evento con aforo]
     C --> D[Configurar tiers, cupos y precios]
-    D --> E[Definir vigencia de Early Bird]
-    E --> F[Evento visible en el sistema]
+    D --> E[Evento visible]
 
-    B -->|Comprador| G[Consultar eventos disponibles]
-    F --> G
+    B -->|Comprador| G[Consultar disponibilidad por tier]
+    G --> I[Seleccionar tier y generar reserva]
+    I --> J{Pago en 10 min}
 
-    G --> H[Ver disponibilidad por tier]
-    H --> I[Seleccionar tier y generar reserva]
-    I --> J{Pago dentro de 10 minutos}
+    J -->|Sí, éxito| K[Confirmar compra]
+    K --> L[Notificar y Mostrar ticket]
 
-    J -->|Sí, pago exitoso| K[Confirmar compra]
-    K --> L[Descontar inventario]
-    L --> M[Notificar compra exitosa]
-    M --> N[Mostrar ticket confirmado]
+    J -->|No| O[Liberar entrada asíncronamente]
+    O --> P[Notificar liberación]
+```
 
-    J -->|No, pago fallido| O[Liberar entrada]
-    O --> P[Actualizar disponibilidad]
-    P --> Q[Notificar pago fallido]
+### 🚀 Realidad Arquitectónica Construida (Extra-Scope DEV)
+*Como se documentó en nuestro `REALITY_CHECK.md`, el equipo de desarrollo superó las expectativas del MVP integrando proactivamente un flujo de Autenticación, Frontend y Gateway centralizado que originalmente estaba fuera de nuestro alcance comprometido.*
 
-    J -->|No, reserva expirada| R[Liberar entrada]
-    R --> S[Actualizar disponibilidad]
-    S --> T[Notificar liberación de reserva]
+```mermaid
+flowchart TD
+    Z[Cliente Web / Frontend React] -->|HTTPS JSON| A[API Gateway :8080]
+    
+    A -->|Rutas Abiertas| B{AuthController JWT}
+    B -->|BuyerRegister| C[Guardar usuario en postgres-gateway]
+    B -->|BuyerLogin| D[Retornar Access Token]
+    
+    A -->|Rutas Protegidas| E{JwtAuthenticationFilter}
+    E -->|Validado: Rol Admin| F[ms-events :8081]
+    E -->|Validado: Rol Comprador| G[ms-ticketing :8082]
+    
+    F --> H[PostgreSQL: Eventos y Tiers]
+    G --> I[PostgreSQL: Inventario Optimista]
+    I -.->|Async Message| J[RabbitMQ Exchange]
+    J --> K[ms-notifications :8083]
 ```
 
 ---
