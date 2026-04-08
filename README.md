@@ -4,9 +4,12 @@
 
 ### Taller Semana 7: Expectativa vs. Realidad - Ejecución Ágil, MVP y Estrategia de Pruebas
 
-**Equipo:** Christopher Ismael Pallo Arias (QA) / DEV  
+**Equipo del Proyecto:**  
+Christopher Ismael Pallo Arias — **QA**  
+Luis Alfredo Pinzón Quintero — **DEV**
+
 **Proyecto:** Construcción del Ticketing MVP Real y Certificación Integral de Calidad  
-**Objetivo:** Vivir "el choque con la realidad". Pasar del diseño utópico del Taller 6 a la construcción e integración de las piezas críticas para entregar un Producto Mínimo Viable funcional. Consolidar aquí la documentación rectora estratégica (Plan de Pruebas y Matrices) y enlazar todo el ecosistema de automatización.
+**Objetivo:** Vivir "el choque con la realidad". Pasar del diseño utópico del Taller 6 a la construcción e integración de las piezas críticas para entregar un Producto Mínimo Viable funcional. Consolidar aquí la documentación rectora estratégica (PRD, Plan de Pruebas y Matrices) y enlazar todo este ecosistema interconectado.
 
 <br />
 
@@ -25,48 +28,64 @@
 
 ---
 
-## 📌 Panel Documental de Estrategia (Fase 3 y 5)
+## 🎭 Sobre el Producto (Contexto de Negocio)
 
-> ⚠️ **ATENCIÓN EVALUADOR:** Este repositorio funciona como el **Control Central (Hub)**. Aquí residen exclusivamente los artefactos estratégicos y de planificación ágil exigidos por la rúbrica del Taller 7, que orquestan las pruebas de todo el proyecto.
+**Sistema de Venta de Entradas para Obras de Teatro**  
+El sistema resuelve el problema histórico del inventario bloqueado: cuando un comprador intenta adquirir una entrada pero no completa el pago, el sistema tradicional congela la venta. 
 
-- 📄 **Plan de Pruebas Oficial:** [`TEST_PLAN.md`](./TEST_PLAN.md) *(Documentación estricta de alcance, estrategia, matrices de riesgo y cronograma QA).*
-- 📋 **Matriz de Casos de Prueba:** [`TEST_CASES.md`](./TEST_CASES.md) *(Mapeo detallado de las 7 Historias de Usuario, precondiciones y resultados de los 29 escenarios).*
-- 🔍 **Análisis Retrospectivo:** [`REALITY_CHECK.md`](./REALITY_CHECK.md) *(Documento de Cierre: Expectativa vs. Tiempo Real invertido por el equipo).*
-- 🧠 **Cimientos de Producto:** Las carpetas y archivos legados de este repositorio (`PRD.md`, `USER_STORIES.md`, etc.) brindan trazabilidad a los requerimientos de negocio devenidos en este MVP.
+Nuestro MVP orquesta un **temporizador ágil de 10 minutos** respaldado por jobs de sincronización y validaciones optimistas de inventario. Si el pago falla o el tiempo expira, las entradas se liberan instantánea y automáticamente. Para el espectador significa transparencia; para el organizador, maximización de ingresos y cero sobreventas.
+
+**Características Núcleo Construidas en este MVP:**
+- Configuración de aforos estrictos y validación de topes por sala.
+- Estructuración dinámica de categorías (Tiers): *VIP, General, y Early Bird* (basado en tiempo).
+- Reserva con cuenta regresiva.
+- Simulador de transacciones (Éxito / Fallo de tarjetas).
+- Liberación asíncrona de entradas abandonadas.
+
+### 📚 Glosario Transversal
+*   **Tier:** Categorías de las entradas disponibles para un evento.
+*   **Early Bird:** Categoría con precio especial disponible solo durante una ventana de tiempo definida.
+*   **Reserva:** Bloqueo temporal de una entrada mientras el comprador completa el pago.
+*   **Timeout & Timer:** Vencimiento automático de la reserva.
+*   **Scheduler & Job de respaldo:** Procesos silentes que barren reservas abandonadas garantizando disponibilidad perpetua.
 
 ---
 
 ## 🌌 Ecosistema de Repositorios (Código y Automatización)
 
-Para cumplir con la separación de responsabilidades, aislar el rendimiento y mantener la limpieza de la integración continua, el proyecto está fragmentado en **4 repositorios satélite fundamentales**. 
-
-Cada repositorio cuenta con un nivel de cumplimiento extremo, README propio con explicaciones de sus retos técnicos y despliegues automáticos a GitHub Pages.
+Para cumplir con la separación de responsabilidades y aislar la infraestructura y testing, el proyecto está fragmentado en **4 repositorios satélite fundamentales**. 
 
 | Perfil / Dominio | Repositorio Oficial | Resultados en Vivo |
 |---|---|---|
-| 🏗️ **Backend & Orquestación** | [🔗 **TICKETING_SEM7**](https://github.com/ChristopherPalloArias/TICKETING_SEM7) | *Microservicios Base (Docker Compose)* |
+| 🏗️ **Backend & Aplicación** | [🔗 **TICKETING_SEM7**](https://github.com/ChristopherPalloArias/TICKETING_SEM7) | *Microservicios Base (Toda la app)* |
 | 🥋 **Certificación Funcional** | [🔗 **TICKETING_SEM7_KARATE**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_KARATE) | [🌐 Dashboard Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/) |
 | 🚀 **Pruebas de Carga (SLA)** | [🔗 **TICKETING_SEM7_K6**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_K6) | [🌐 Informe k6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/) |
 | 🥒 **Pruebas BDD (Funcional)** | [🔗 **TICKETING_SEM7_SERENITY**](https://github.com/ChristopherPalloArias/TICKETING_SEM7_SERENITY) | *Suites de Serenity BDD* |
 
 ---
 
-## 🎯 Contexto del Reto: El Choque con la Realidad
+## 📌 Documentación de Producto y Estrategia QA
 
-En el Taller 6 (fase de diseño en este mismo backlog) diseñamos el plano de un ecosistema perfecto. En el **Taller 7**, la misión fue priorizar basándonos en el riesgo de negocio: construir un núcleo capaz de soportar la venta real, evitando sobreventas y bloqueos de entradas por carritos abandonados.
+### Fase Taller 6: Concepción del Producto (Diseño)
+Aquí diagramamos la base de nuestro negocio, los requerimientos y las historias.
+- 📐 **Historia y Flujos:** [Revisar tablero Story Map interactivo en FigJam](https://www.figma.com/figjam) (Flujos MVP, Planning Poker, Actividades).
+- 🏗️ **Documento PRD:** [`PRD.md`](./PRD.md)
+- 👤 **Historias de Usuario:** [`USER_STORIES.md`](./USER_STORIES.md)
+- ☑️ **Subtareas DEV:** [`SUBTASKS.md`](./SUBTASKS.md)
 
-### Dinámica de Trabajo y Fases
-1. **Fase 1 (Alineación):** Dejamos de lado historias cosméticas o pasarelas completas y abrazamos la selección de 7 HUs de núcleo para un MVP realista en torno a la disponibilidad concurrente.
-2. **Fase 2 (Ejecución):** El DEV implementó a contrarreloj en micro-sprints de 2 días los microservicios transaccionales. Aquí nació la primera desviación técnica debido a orquestaciones asíncronas imprevistas.
-3. **Fase 3 (Estrategia QA):** Mientras se construía, se cimentó el Plan de Calidad (ver archivos de este repo). No fue probar por probar, sino probar lo que sostiene el negocio.
-4. **Fase 4 (Reto Karate Automatizado):** Se generaron 29 casos de prueba robustos mapeados 1 a 1 a las Historias de Usuario para validar contratos (Schema Match), reglas temporales y concurrencia.
-5. **Fase 5 (Análisis Retrospectivo):** Se contrastan los Story Points estimados contra los obstáculos técnicos afrontados, sintetizado en el documento de check-in de realidad.
+### Fase Taller 7: Estrategia de Pruebas (El Choque con la Realidad)
+Aquí consolidamos la estrategia de validación exigida por rúbrica para certificar los micro-sprints del DEV. Todo escenario construido en K6, Karate o Serenity obedece a las matrices de este nivel documental.
+- 📊 **Gestión Ágil:** [Tablero GitHub Projects](https://github.com/users/ChristopherPalloArias/projects/2) *(Seguimiento de las Historias de Usuario desarrolladas y subtareas).*
+- 📄 **Plan de Pruebas Oficial:** [`TEST_PLAN.md`](./TEST_PLAN.md) *(Validación estricta de alcance, estrategia formal, ambientes y aserciones de la Fase 3).*
+- 📋 **Matriz de Casos de Prueba:** [`TEST_CASES.md`](./TEST_CASES.md) *(Mapeo detallado de las 7 Historias de Usuario desarrolladas y sus 29 casos operacionales automatizados).*
+- 🔍 **Análisis Retrospectivo:** [`REALITY_CHECK.md`](./REALITY_CHECK.md) *(Documento de Cierre conjunto DEV+QA, análisis de desvíos y retrospectiva).*
 
 ---
 
-## 🧭 ¿Cómo Auditar Este Proyecto?
+## 🧭 ¿Cómo Auditar Este Proyecto Completo? (Taller 7)
 
-Si estás evaluando la entrega, te sugerimos este orden de revisión:
-1. **Lee la Estrategia:** Abre primero el [`TEST_PLAN.md`](./TEST_PLAN.md) en este repositorio para comprender cómo, qué y por qué se automatizó lo que se automatizó.
-2. **Revisa la Ejecución de Pruebas:** Dirígete a los Dashboards vivos de [Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/) y [k6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/) usando la tabla superior.
-3. **Reflexiona con el Equipo:** Finaliza revisando el [`REALITY_CHECK.md`](./REALITY_CHECK.md) para constatar nuestra madurez técnica ante los imprevistos de un sprint ágil real.
+Si estás evaluando el cumplimiento de todos los hitos del taller para la calificación compartida (QA 50% / DEV 50%), te sugerimos este estándar de revisión:
+1. **Entender el Contexto de Riesgo:** Abre aquí mismo el [`TEST_PLAN.md`](./TEST_PLAN.md) para verificar cómo priorizamos agresivamente las pruebas funcionales.
+2. **Revisión de Flujos Funcionales:** Ingresa al Dashboard vivo de **[Karate](https://christopherpalloarias.github.io/TICKETING_SEM7_KARATE/)** que certifica en BDD que no permitimos sobreventas.
+3. **Revisión de SLA y Rendimiento:** Verifica la carga paramétrica asíncrona inyectada contra el servidor en el reporte público de **[K6](https://christopherpalloarias.github.io/TICKETING_SEM7_K6/)**.
+4. **Cierre de Ciclo:** Evalúa las lecciones de micro-sprint leyendo las respuestas del equipo en nuestro [`REALITY_CHECK.md`](./REALITY_CHECK.md).
