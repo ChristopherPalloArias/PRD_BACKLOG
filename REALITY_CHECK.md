@@ -77,7 +77,7 @@ La calidad se trabajó de forma estructurada y en paralelo al desarrollo, no com
 La estrategia de QA se apoyó en los siguientes frentes:
 - Definición de la estrategia general de pruebas en `TEST_PLAN.md`.
 - Construcción y actualización de la matriz de casos en `TEST_CASES.md`.
-- Automatización de frentes funcionales orientados a comportamiento (BDD) con **Serenity + Cucumber**.
+- Automatización de frentes funcionales UI con **Serenity BDD + Screenplay**, configurado con capturas de pantalla automáticas (`AFTER_EACH_STEP`) e interacciones humanizadas para demostraciones visuales.
 - Automatización estricta de aserciones de API, contratos y Bases de Datos con **Karate DSL**.
 - Certificación de resiliencia, latencia y prevención de sobreventa bajo estrés agresivo utilizando **k6**.
 - Trazabilidad directa entre historias de usuario, criterios de aceptación y casos de prueba.
@@ -94,6 +94,8 @@ Al cierre del ciclo se logró:
 ### 5.3 Realidad técnica de las pruebas
 
 Un hallazgo importante fue que algunos escenarios no podían validarse de forma estable si el backend no ofrecía soporte de testabilidad. Por ello fue necesario trabajar con mecanismos controlados para forzar la ejecución de procesos programados (`@Scheduled`) sin depender de tiempos reales, especialmente en expiración de reservas, vigencia de Early Bird y el job de respaldo.
+
+Adicionalmente, se optimizó el ciclo de vida del WebDriver en Serenity (`restart.browser.for.each = never`) para evitar cuellos de botella por el cierre de procesos de Chrome, y se implementaron interacciones de visualización (`TakeABreath`, `Scroll`) para asegurar que el evaluador pueda seguir el flujo de compra a una velocidad humanamente comprensible.
 
 ## 6. Problemas técnicos encontrados
 
@@ -155,6 +157,7 @@ Este taller permitió aplicar de forma práctica conceptos que normalmente se ab
 - Un caso documental no basta si no se alinea con la ejecución real.
 - La trazabilidad entre HU, CA, TC y evidencia fortalece el entregable.
 - La calidad también depende de la testabilidad del backend.
+- La implementación de evidencia visual automatizada (screenshots) convierte las pruebas en un artefacto de auditoría transparente, facilitando la validación objetiva de los criterios de aceptación.
 
 **De producto:**
 - Un backlog pequeño no significa un proyecto simple.
